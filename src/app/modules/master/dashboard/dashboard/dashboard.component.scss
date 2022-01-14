@@ -1,0 +1,11 @@
+@import "~src/assets/scss/variables/variables";
+
+.top-cat-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    box-shadow: 0px 4px 20px 2px $light-gray;
+    border-radius: 6px;
+}

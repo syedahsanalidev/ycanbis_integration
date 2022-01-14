@@ -1,0 +1,119 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="p-3 rounded shadow-sm">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <table class="w-100 table mb-0 table-bordered t-layout-fixed fs0-9">
+                            <thead>
+                                <tr>
+                                    <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        Social Link
+                                    </th>
+                                    <th class="text-end pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        Update(s)
+                                    </th>
+                                    <th class="text-end pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        Engagement
+                                    </th>
+                                    <th class="text-end pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        Favorites
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        <a [routerLink]="['/social/twitter']"
+                                            [queryParams]="{social_name: socialNames.twitter}">
+                                            Twitter
+                                        </a>
+                                    </th>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyUpdates}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyEngagement}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfFavorates}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        <a [routerLink]="['/social/youtube']"
+                                            [queryParams]="{social_name: socialNames.youtube}">
+                                            Youtube
+                                        </a>
+                                    </th>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyUpdates}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyEngagement}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfFavorates}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        <a [routerLink]="['/social/facebook']"
+                                            [queryParams]="{social_name: socialNames.facebook}">
+                                            Facebook
+                                        </a>
+                                    </th>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyUpdates}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyEngagement}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfFavorates}}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        <a [routerLink]="['/social/linkedin']"
+                                            [queryParams]="{social_name: socialNames.linkedin}">
+                                            linkedin
+                                        </a>
+                                    </th>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyUpdates}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyEngagement}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfFavorates}}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
+                                        <a [routerLink]="['/social/instagram']"
+                                            [queryParams]="{social_name: socialNames.instagram}">
+                                            Instagram
+                                        </a>
+                                    </th>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyUpdates}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfMyEngagement}}
+                                    </td>
+                                    <td class="text-end pl-3 pr-3 pt-2 pb-2">
+                                        {{totalNumberOfFavorates}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="171" height="302" viewBox="0 0 171 302">
+  <defs>
+    <filter id="Path_20" x="0" y="0" width="171" height="171" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#bababa"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_56" data-name="Group 56" transform="translate(-372 -261)">
+    <g transform="matrix(1, 0, 0, 1, 372, 261)" filter="url(#Path_20)">
+      <path id="Path_20-2" data-name="Path 20" d="M40,0h61a40,40,0,0,1,40,40v61a40,40,0,0,1-40,40H40A40,40,0,0,1,0,101V40A40,40,0,0,1,40,0Z" transform="translate(15 11)" fill="#164223"/>
+    </g>
+    <g id="Group_55" data-name="Group 55" transform="translate(93 18)">
+      <text id="T_H_E" data-name="T
+H
+E" transform="translate(339 371)" fill="#3e8b5a" font-size="60" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">T</tspan><tspan x="0" y="79">H</tspan><tspan x="0" y="158">E</tspan></text>
+      <text id="T_H_E-2" data-name="T
+H
+E" transform="translate(349 371)" fill="#feb800" font-size="60" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">T</tspan><tspan x="0" y="79">H</tspan><tspan x="0" y="158">E</tspan></text>
+    </g>
+  </g>
+</svg>

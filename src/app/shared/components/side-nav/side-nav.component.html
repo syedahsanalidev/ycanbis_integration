@@ -1,0 +1,363 @@
+<div
+  class="sidenav-wrapper"
+  [ngClass]="
+    !toggleSideNav ? 'sidenav-min' : ' sidenav-wrapper'
+  "
+>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="menu-height">
+        <table class="w-100">
+          <tr>
+            <td class="align-top p-0">
+              <div
+                class="admin-wrapper"
+                [ngClass]="
+                  toggleSideNav ? 'ht-150px' : 'ht-200px admin-abs-img'
+                "
+              >
+                <div class="">
+                  <a
+                    class="
+                      d-block
+                      menu
+                      shadow-none
+                      text-decoration-none text-dark
+                      outline-none
+                    "
+                  >
+                    <table class="w-100 h-100">
+                      <tr>
+                        <td class="p-0">
+                          <div>
+                            <fa-icon
+                              class="color-icon mr-3 text-blue"
+                              [icon]="faTimes"
+                              class="
+                                sidenav-butn-min
+                                cp
+                                d-none d-sm-none d-md-block
+                              "
+                              (click)="togglenav()"
+                              [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                            >
+                            </fa-icon>
+                            <fa-icon
+                              class="color-icon mr-3 text-blue"
+                              [icon]="faBars"
+                              class="
+                                sidenav-butn
+                                cp
+                                d-none d-sm-none d-md-block
+                              "
+                              (click)="togglenav()"
+                              [ngClass]="!toggleSideNav ? 'hide-elements' : ''"
+                            >
+                            </fa-icon>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-top p-0">
+              <div
+                class="menu-wrapper"
+                [ngClass]="toggleSideNav ? 'menu-wrapper-sm' : 'menu-wrapper'"
+              >
+                <table class="w-100">
+                  <!-- Employee menu starts from here -->
+                  <tr>
+                    <td class="p-0 align-top text-uppercase">
+                      <div>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/motherboard']"
+                          routerLinkActive="active"
+                          title="Motherboard"
+                        >
+                          <fa-icon class="color-icon" [icon]="faHome">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Motherboard
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/social/twitter']"
+                          routerLinkActive="active"
+                          title="Social Media"
+                        >
+                          <fa-icon class="color-icon" [icon]="faHashtag">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 2px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Social Media
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/stocks']"
+                          routerLinkActive="active"
+                          title="Stock"
+                        >
+                          <fa-icon class="color-icon" [icon]="faLayerGroup">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 1px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Stock
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [href]="['https://forum.ycanbis.com/']"
+                          routerLinkActive="active"
+                          title="Forum"
+                        >
+                          <fa-icon class="color-icon" [icon]="faTty">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 2px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Forum
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/news']"
+                          routerLinkActive="active"
+                          title="News"
+                        >
+                          <fa-icon class="color-icon" [icon]="faNewspaper">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 1px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            News
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/notification']"
+                          routerLinkActive="active"
+                          title="Notification"
+                        >
+                          <fa-icon class="color-icon" [icon]="faBell">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 4px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Notification
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/profile']"
+                          routerLinkActive="active"
+                          title="Profile"
+                        >
+                          <fa-icon class="color-icon" [icon]="faUserCircle">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 2px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Profile
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/colleagues']"
+                          routerLinkActive="active"
+                          title="Invites Colleagues"
+                        >
+                          <fa-icon class="color-icon" [icon]="faUserPlus">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: -1px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Invites Colleagues
+                          </span>
+                        </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/supprots']"
+                          routerLinkActive="active"
+                          title="Supports"
+                        >
+                          <fa-icon class="color-icon" [icon]="faHeadset">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 2px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Supports
+                          </span>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Employee menu ends here -->
+
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-bottom p-0">
+              <div class="menu-list-wrapper position-relative">
+                <div class="outer-div">
+                  <a
+                    class="
+                      d-block
+                      menu
+                      shadow-none
+                      text-decoration-none
+                      fs0-95
+                      outline-none
+                      cp
+                    "
+                    [routerLink]="['/logout']"
+                  >
+                    <div
+                      class="
+                        p-3
+                        ps-4
+                        text-danger
+                        fs0-9
+                        font-weight-bold
+                        text-uppercase
+                        border-top
+                      "
+                    >
+                      <fa-icon class="color-icon" [icon]="faSignOutAlt">
+                      </fa-icon>
+                      <span
+                        class="ps-3"
+                        [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                        >Logout</span
+                      >
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

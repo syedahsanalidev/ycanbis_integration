@@ -1,0 +1,23 @@
+@import "~src/assets/scss/variables/_variables.scss";
+
+.form-signin {
+  width: 400px;
+  padding: 15px;
+  margin: auto;
+}
+
+.bg-abstract {
+  background-image: url("/assets/images/abstract.jpg");
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  overflow: hidden;
+  height: 175px;
+  position: relative;
+}
+
+.bg-opc {
+  background-color: rgba($color: $primary, $alpha: 0.6);
+  height: 176px;
+}

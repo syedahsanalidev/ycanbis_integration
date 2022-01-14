@@ -1,0 +1,256 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../src/assets/scss/variables/variables";
+
+/*Including bootstrap css*/
+@import "~bootstrap/scss/bootstrap.scss";
+
+/*Toastr*/
+@import '~ngx-toastr/toastr';
+
+/**Ng select*/
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+html,body{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: 95%;
+    font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background:#f1f1f1;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: #ddd; 
+    border-radius: 10px; 
+    border: 2px solid #f1f1f1;
+  }
+
+.cp{
+      cursor: pointer;
+  }
+.website-top-space {
+    // margin-top: 74.99px;
+    .ph-top {
+        position: absolute;
+        transform: translate(10%, -50%);
+        z-index: 2;
+    }
+    .ph-bottom {
+        position: absolute;
+        transform: translate(-10%, -50%);
+        z-index: 1;
+    }
+}
+
+.page-header{
+    background-color: $light-green;
+    padding: 15px;
+    height: 120px;
+    position: relative;
+}
+
+.bg-dark-black {
+    background-color: $dark-black;
+}
+.text-primary-light {
+    color: lighten($color: $green, $amount: 13);
+}
+
+.bg-primary-light {
+    background-color: lighten($color: $green, $amount: 13);
+}
+
+.bg-dark-light {
+    background-color: lighten($color: $dark-black, $amount: 95);
+}
+
+.text-dark-light {
+    color: #ededed !important
+}
+
+
+.t-layout-fixed{
+    table-layout: fixed;
+}
+.w-80px{
+    width: 80px;
+}
+.w-100px{
+    width: 100px;
+}
+.w-140px{
+    width: 140px;
+}
+.h-140px{
+    height: 140px;
+}
+.h-40px{
+    height: 40px;
+}
+.h-45px{
+    height: 45px;
+}
+.h-80px{
+    height: 80px;
+}
+.h-120px{
+    height : 120px;
+}
+.w-100px{
+    width: 100px;
+}
+
+.fs0-9{
+    font-size: 90%;
+}
+.fs0-8{
+    font-size: 80%;
+}
+
+.fs12-0{
+    font-size: 120%;
+}
+
+.fs40px{
+    font-size: 40px;
+}
+
+.fs15-0{
+    font-size: 60px;
+}
+
+.br-start{
+    border-radius: 50rem 0rem 0rem 50rem !important;
+}
+
+.br-end{
+    border-radius: 0rem 50rem 50rem 0rem !important;
+}
+
+.br-25{
+    border-radius: 25px;
+}
+
+
+.pointer{
+    cursor: pointer;
+}
+
+/* Timelines */
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+}
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: #a29191;
+    top: 30px;
+    bottom: 0;
+    left: 10px;
+    margin-left: -0.5px;
+}
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+}
+.timeline-container::after {
+    font-family: "FontAwesome";
+    content: '\f017';
+    font-size: 19px;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    right: -17px;
+    background-color: $light-gray;
+    text-align: center;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    color: $orange;
+}
+.timeline-left {
+    left: 0;
+}
+.timeline-right {
+    left: 13px;
+}
+.timeline-left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid $green;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent $green;
+}
+
+.timeline-right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 23px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid $green;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent $green transparent transparent;
+}
+.timeline-right::after {
+    left: -16px;
+}
+.timeline-content {
+    padding: 20px 30px;
+    background-color: $green;
+    position: relative;
+    border-radius: 6px;
+}
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid $green;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent $green transparent transparent;
+    }
+    .timeline-left::after, 
+    .timeline-right::after {
+        left: 15px;
+    }
+    .timeline-right {
+        left: 0%;
+    }
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+    src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}

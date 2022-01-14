@@ -1,0 +1,232 @@
+<div class="header-wrapper bg-white wrapper-transition main-wrapper"
+  [ngClass]="sideNavSlide == true ? 'main-wrapper-min' : ''">
+  <div class="pe-3 ps-3 pt-2 pb-2 border-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <div class="d-flex">
+            <div class="text-uppercase">Follow Us On :</div>
+            <div class="me-2 ms-5" *ngIf="socialLink.twitter.length != 0">
+              <a [href]="socialLink.twitter" target="_blank">
+                <img
+                  src="./assets/images/twitter.png"
+                  alt="twitter"
+                  height="16"
+                />
+              </a>
+            </div>
+            <div class="me-2 ms-2" *ngIf="socialLink.linkedIn.length != 0">
+              <a [href]="socialLink.linkedIn" target="_blank">
+                <img
+                  src="./assets/images/linkedin.png"
+                  alt="linkedin"
+                  height="16"
+                />
+              </a>
+            </div>
+            <div class="me-2 ms-2" *ngIf="socialLink.facebook.length != 0">
+              <a [href]="socialLink.facebook" target="_blank">
+                <img
+                  src="./assets/images/facebook.png"
+                  alt="facebook"
+                  height="16"
+                />
+              </a>
+            </div>
+            <div class="me-2 ms-2" *ngIf="socialLink.instagram.length != 0">
+              <a [href]="socialLink.instagram" target="_blank">
+                <img
+                  src="./assets/images/instagram.png"
+                  alt="instagram"
+                  height="16"
+                />
+              </a>
+            </div>
+            <div class="me-2 ms-2" *ngIf="socialLink.reddit.length != 0">
+              <a [href]="socialLink.reddit" target="_blank">
+                <img
+                  src="./assets/images/reddit-logo.png"
+                  alt="reddit"
+                  height="18"
+                />
+              </a>
+            </div>
+            <div class="me-2 ms-2" *ngIf="socialLink.youtube.length != 0">
+              <a [href]="socialLink.youtube" target="_blank">
+                <img
+                  src="./assets/images/youtube-brands.svg"
+                  alt="youtube"
+                  height="20"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-8">
+          <div class="d-flex justify-content-end">
+            <div class="text-dark fs0-9 text-uppercase">
+              <a class="nav-link text-dark fs0-9" href="https://ycanbis.com"
+                  >Website</a
+              >
+            </div>
+            <div class="text-uppercase ms-3 text-dark fs0-9">
+              <a
+                class="nav-link text-dark fs0-9"
+                [href]="socialLink.forum"
+                target="_blank"
+                >Forum</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <nav class="navbar p-3 navbar-expand-md navbar-light bg-white">
+          <a class="navbar-brand" href="#">
+            <img
+              src="//cdn.ycanbis.com/website/logo/logo.svg"
+              alt="logo"
+              height="40"
+            />
+          </a>
+          <button
+            class="navbar-toggler p-0 border-0"
+            (click)="showAndHideMenu()"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="navbar-collapse offcanvas-collapse open"
+            [ngClass]="isHideAtSmall ? 'collapse' : 'collapsed open'"
+            id="navbarsDefault"
+          >
+            <ul class="navbar-nav ms-auto text-uppercase">
+              <li class="nav-item me-4">
+                <a class="nav-link text-dark fs0-9" [routerLink]="['/']"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  [routerLink]="['/']"
+                  >Solutions</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  [routerLink]="['/']"
+                  >Team Members</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  [routerLink]="['/']"
+                  >Contact Us</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  [routerLink]="['/']"
+                  >Latest News</a
+                >
+              </li>
+              <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  [routerLink]="['/']"
+                  >Blogs</a
+                >
+              </li>
+              <!-- <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  [routerLink]="['/social-subscription']"
+                  >Twitter</a
+                >
+              </li> -->
+              <!-- <li class="nav-item me-4">
+                <a
+                  class="nav-link text-dark fs0-9"
+                  href="https://sso.ycanbis.com"
+                >
+                  My Account
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <div
+                  class="btn-group"
+                  dropdown
+                  placement="bottom left"
+                  [insideClick]="true"
+                  [autoClose]="true"
+                  container="body"
+                >
+                  <a
+                    id="button-myaccount"
+                    dropdownToggle
+                    type="button"
+                    class="nav-link text-dark fs0-9"
+                    aria-controls="dropdown-myaccount"
+                  >
+                    <fa-icon
+                      [icon]="faUserCircle"
+                      class="ms-2 h5 mb-0 text-primary"
+                    ></fa-icon>
+                    <fa-icon [icon]="faCaretDown" class="ms-2"></fa-icon>
+                  </a>
+                  <ul
+                    id="dropdown-myaccount"
+                    *dropdownMenu
+                    class="dropdown-menu"
+                    role="menu"
+                    aria-labelledby="button-myaccount"
+                  >
+                    <li>
+                      <table>
+                        <tr>
+                          <td class="ps-3">
+                            <fa-icon
+                                [icon]="faUserCircle"
+                                class="me-2 h3 mb-0 text-primary"
+                            ></fa-icon>
+                          </td>
+                          <td class="p-2 ps-3">
+                            <div class="fs0-95 fw-bold">Pratik Priyanhsu</div>
+                            <div class="fs0-9">Administrator</div>
+                          </td>
+                        </tr>
+                      </table>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-item" [routerLink]="['/']">
+                        <fa-icon [icon]="faTachometerAlt" class="me-2"></fa-icon>
+                        Motherboard
+                      </a>
+                    </li>
+                    <li role="menuitem">
+                      <a class="dropdown-item text-danger" href="/logout">
+                        <fa-icon [icon]="faSignOutAlt" class="me-2"></fa-icon>
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="website-top-space border-top">
+    <div class="d-flex gx-0 bg-light-gray">
+        <!-- <div class="side-nav">
+            <div class="user-profile">
+                <div class="text-center pt-4">
+                    <div class="user-profile-avtar m-auto" *ngIf="!userDetails?.profileImage">
+                        {{userAvatarText}}
+                    </div>
+                    <div class="text-center" *ngIf="userDetails?.profileImage">
+                        <img class="user-profile-avtar m-auto" [src]="userDetails.profileImage" alt="User image">
+                    </div>
+                </div>
+                <div class="text-center text-white mt-2 text-uppercase">
+                    {{userDetails?.fullname}}
+                </div>
+
+                <div class="text-end text-white mt-2 text-uppercase p-3">
+                    <span (click)="signOut()" class="pointer">
+                        <fa-icon [icon]="faSignOutAlt" class="me-2 text-danger"></fa-icon>
+                        Logout
+                    </span>
+
+                </div>
+            </div>
+
+            <div class="p-3">
+                <div class="">
+                    <div class="side-nav-categories">
+                        <a class="nav-link pt-0 pb-0" [routerLink]="['dashboard']">
+                            <fa-icon [icon]="faTachometerAlt" class="me-3 text-primary"></fa-icon>
+                            My Dashboard
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="side-nav-categories">
+                        <a class="nav-link pt-0 pb-0" [routerLink]="['social-connect']">
+                            <fa-icon [icon]="faUsers" class="me-3 text-primary"></fa-icon>
+                            My Social Connect
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="side-nav-categories">
+                        <a class="nav-link pt-0 pb-0" [routerLink]="['trade']">
+                            <fa-icon [icon]="faChartLine" class="me-3 text-primary"></fa-icon>
+                            Trade
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="side-nav-categories">
+                        <a class="nav-link pt-0 pb-0" [routerLink]="['profile']">
+                            <fa-icon [icon]="faUser" class="me-3 text-primary"></fa-icon>
+                            My Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="side-nav-categories nav-link  pt-0 pb-0">
+                        <fa-icon [icon]="faCogs" class="me-3 text-primary"></fa-icon>
+                        Settings
+                    </div>
+                    <div class="nav-sub-menu mt-2">
+                        <div>
+                            <a class="nav-link pt-0 pb-0" [routerLink]="['settings/user']">
+                                <fa-icon [icon]="faUserEdit" class="me-3 text-primary"></fa-icon>
+                                Users
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="nav-link pt-0 pb-0" [routerLink]="['settings/upload']">
+                                <fa-icon [icon]="faUpload" class="me-3 text-primary"></fa-icon>
+                                Upload File
+                            </a>
+                        </div>
+                        <div class="mt-3">
+                            <a class="nav-link pt-0 pb-0" [routerLink]="['settings/access-management']">
+                                <fa-icon [icon]="faKeyboard" class="me-3 text-primary"></fa-icon>
+                                Access Management
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="main-content" style="overflow: hidden;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

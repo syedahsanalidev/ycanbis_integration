@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-sm-12">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col mt-3">
+                        <a class="top-cat-wrapper pointer" [routerLink]="['/social/twitter']">
+                            <div class="text-center">
+                                <h6>Social Media</h6>
+                                <div class="fs0-8 text-muted">Social live feeds</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a class="top-cat-wrapper pointer" [routerLink]="['dashboard']">
+                            <div class="text-center">
+                                <h6>Stocks</h6>
+                                <div class="fs0-8 text-muted">Live Stocks</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a class="top-cat-wrapper pointer"  target="_blank" [href]="socialLink.forum">
+                            <div class="text-center">
+                                <h6>Forum</h6>
+                                <div class="fs0-8 text-muted">Discussion Board</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col mt-3">
+                        <a class="top-cat-wrapper pointer" target="_blank" [href]="socialLink.news">
+                            <div class="text-center">
+                                <h6>News</h6>
+                                <div class="fs0-8 text-muted">News Agreegator</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-3">
+    <router-outlet></router-outlet>
+</div>

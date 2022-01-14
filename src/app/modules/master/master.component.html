@@ -1,0 +1,20 @@
+<ng-container *ngIf="isShowHeader">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 p-0">
+                <app-header [sideNavSlide]="sideNavSlide"></app-header>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<app-side-nav (toggleEvent)="homeSlide($event)"></app-side-nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 mt-5 p-0">
+            <div class="wrapper-transition main-wrapper"
+                [ngClass]="sideNavSlide == true ? 'main-wrapper-min' : ''">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

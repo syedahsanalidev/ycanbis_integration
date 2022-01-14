@@ -1,0 +1,170 @@
+.sidenav-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  background-color: white;
+  transition: 0.1s all;
+  z-index: 1000;
+  border-right: 1px solid #ddd
+}
+
+.master-header-sidenav-wrapper {
+  top: 40px;
+}
+
+// .menu-height {
+//   height: calc(100vh - 55px);
+// }
+
+.master-header-menu-height {
+  height: calc(100vh - 95px);
+  overflow: auto;
+}
+
+.sidenav-wrapper .menu-wrapper {
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.sidenav-min .menu-wrapper {
+  height: calc(100vh - 100px);
+  overflow: auto;
+}
+
+.menu-wrapper .menu span {
+  color: rgba(0,0,0,0.8) !important;
+}
+
+.sidenav-wrapper .menu-wrapper a {
+  padding: 0.5rem 1rem;
+}
+
+.sidenav-min .menu-wrapper a {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid transparent !important;
+}
+
+.sidenav-wrapper .menu-wrapper a.active{
+  background: lighten($color: #467958, $amount: 50%);
+  color: black !important;
+}
+
+.sidenav-wrapper .menu-wrapper a.active .color-icon{
+  color: black !important;
+}
+
+.sidenav-min .menu-wrapper a.active {
+  position: relative;
+  background: lighten($color: #467958, $amount: 53%) !important;
+}
+
+.menu-wrapper a .color-icon{
+  color: rgba(0,0,0,0.7) !important;
+  font-size: 1rem;
+}
+
+.menu-wrapper a.active span,
+.menu-wrapper a.active .color-icon {
+  font-weight: 550;
+  color: black !important;
+}
+
+.invoicing-menu a.dropdown-toggle::after {
+  display: none;
+}
+
+.user-circle{
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
+  margin-left: 3px;
+}
+
+::ng-deep .dropdown-menu.side-dropdown-menu {
+  left: -55px !important;
+  top: -15px !important;
+  min-width: 13rem;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2) !important;
+  border: 0;
+}
+
+::ng-deep .dropdown-menu.side-dropdown-menu .dropdown-item.active,
+::ng-deep .dropdown-menu.side-dropdown-menu .dropdown-item:active {
+  background-color: transparent !important;
+  color: rgba(0,0,0,0.3) !important;
+}
+
+::ng-deep bs-dropdown-container {
+  position: absolute !important;
+}
+
+.bottom-wrapper {
+  position: relative;
+  bottom: 0;
+}
+
+.sidenav-butn {
+  position: fixed;
+  left: 20px;
+  top: 12px;
+  font-size: 1.3rem;
+  transition: 0.1s all;
+}
+
+.sidenav-butn-min {
+  position: fixed;
+  left: 20px;
+  top: 12px;
+  font-size: 1.3rem;
+  transition: 0.1s all;
+}
+
+.sidenav-min {
+  position: fixed;
+  left: 0;
+  top: 0px;
+  width: 300px;
+  z-index: 1000;
+  transition: 0.1s all;
+}
+
+.hide-elements {
+  display: none !important;
+  opacity: 0;
+  transition: 0.2s all;
+}
+
+.hide-elements a span{
+  display: none !important;
+  opacity: 0;
+  transition: 0.2s all;
+}
+
+.divider {
+  margin-bottom: 0 !important;
+}
+
+::ng-deep .sidenav-wrapper .admin-wrapper .ngx-spinner-overlay{
+  left: 5px !important;
+  top: 0 !important;
+  height: 205px !important;
+}
+
+::ng-deep .sidenav-min .admin-wrapper .ngx-spinner-overlay{
+  left: -3px !important;
+  right: 4px !important;
+  height: 150px !important;
+}
+
+.ht-150px{
+  height: 50px;
+}
+
+.ht-200px{
+  height: 50px;
+}
+
+.role-ids:not(:last-child)::after{
+  content: ', ';
+}
