@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Amplify, { Auth } from 'aws-amplify';
-import { SocialTwitterService } from './helper/http/social-twitter/social-twitter.service';
+// import { SocialTwitterService } from './helper/http/social-twitter/social-twitter.service';
 import { AwsCognitoAuthenticatedUserService } from './helper/services/AwsCognitoAuthenticatedUser/aws-cognito-authenticated-user.service';
 @Component({
   selector: 'app-root',
@@ -8,7 +8,8 @@ import { AwsCognitoAuthenticatedUserService } from './helper/services/AwsCognito
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private socialTwitterService: SocialTwitterService,
+  constructor(
+    // private socialTwitterService: SocialTwitterService,
     private AwsCognitoAuthenticatedUserService: AwsCognitoAuthenticatedUserService) {
    // this.getMyTweets();
     this.checkForLogin();

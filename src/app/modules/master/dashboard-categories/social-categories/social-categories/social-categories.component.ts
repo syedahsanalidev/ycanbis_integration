@@ -23,6 +23,7 @@ export class SocialCategoriesComponent implements OnInit {
   isTwitterCollapsed = false;
 
   public socialNames = SocialNames;
+  data = '';
 
   constructor(private titleService: Title, private myAccountService: MyAccountService) { }
 
@@ -31,6 +32,17 @@ export class SocialCategoriesComponent implements OnInit {
     //this.getMyTotalCountForSocial();
   }
 
+  loginWithFB = () => {
+
+    // fetch('http://localhost:5000/auth/facebook/callback')
+    //   .then((response)  => {
+    //     console.log(response.url)
+    //     this.data = response.url;})
+    //   .catch(function (error) {
+    //     console.log('error', error);
+    //   });
+
+  }
   totalNumberOfFavorates = 0;
   totalNumberOfMyEngagement = 0;
   totalNumberOfMyUpdates = 0;
