@@ -58,9 +58,13 @@
                                 </tr>
                                 <tr>
                                     <th class="pl-3 pr-3 pt-2 pb-2 text-uppercase">
-                                        <a href="http://localhost:5000/auth/facebook">
-                                            Facebook
-                                        </a>
+                                      <a [routerLink]="['/social/facebook']"
+                                         [queryParams]="{social_name: socialNames.facebook}">
+                                        Facebook
+                                      </a>
+<!--                                        <a href="http://localhost:5000/auth/facebook">-->
+<!--                                            Facebook-->
+<!--                                        </a>-->
                                     </th>
                                     <td class="text-end pl-3 pr-3 pt-2 pb-2">
                                         {{totalNumberOfMyUpdates}}
