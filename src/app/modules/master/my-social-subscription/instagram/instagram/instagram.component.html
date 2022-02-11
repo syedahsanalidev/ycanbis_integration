@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col mt-3">
+            <div class="content" role="main">
+              <h2>Pages</h2>
+              <p>Here are some instagram pages to view:</p>
+
+              <div class="card-container">
+                <div *ngFor="let brand of brands" class="card" (click)="selectBrand(brand)"
+                     [class.active]="selectedBrand === brand">
+                  {{brand.name}}
+                </div>
+              </div>
+
+              <div class="brand-details" [class.visible]="selectedBrand">
+                <h2>{{selectedBrand?.name}}</h2>
+                <p>Here is the Instagram page for the selected page:</p>
+                <iframe style="display:none"></iframe>
+                <div #embeddedContentContainer class="embedded-content">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

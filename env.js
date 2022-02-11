@@ -1,0 +1,2 @@
+window.APP_ID = '425860182390839';
+window.FB_TOKEN = '60d523b4fd2bbfeb217e492456205ef6';

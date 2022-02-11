@@ -1,1 +1,80 @@
-<p>facebook works!</p>
+Endpoint With Services
+
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-sm-12">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col mt-3">
+
+            <div class="content" role="main">
+              <h2>Pages</h2>
+              <p>Here are some facebook pages to view:</p>
+              <div class="card-container">
+                <div *ngFor="let brand of brands" class="card" (click)="selectBrand(brand)"
+                     [class.active]="selectedBrand === brand">
+                  {{brand.name}}
+                </div>
+              </div>
+              <div class="brand-details" [class.visible]="selectedBrand">
+                <h2>{{selectedBrand?.name}}</h2>
+                <p>Here is the Facebook page for the selected page:</p>
+                <div #embeddedContentContainer class="embedded-content">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Iframe-->
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row mt-5">-->
+<!--    <div class="col-sm-12">-->
+<!--      <div class="container">-->
+<!--        <div class="row mt-5">-->
+<!--          <div class="col mt-3">-->
+<!--            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmettlesolution%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2058218827670845"-->
+<!--                    width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"-->
+<!--                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">-->
+<!--            </iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--JavaScript SDK-->
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row mt-5">-->
+<!--    <div class="col-sm-12">-->
+<!--      <div class="container">-->
+<!--        <div class="row mt-5">-->
+<!--          <div class="col mt-3">-->
+<!--            <button (click)="handleChangeFb()">Change</button>-->
+<!--            <div>{{facebook}}</div>-->
+<!--            <div id="fb-container">-->
+<!--            <a class="fb-page" [href]="facebook"-->
+<!--                 data-tabs="timeline" data-width="" data-height="" data-small-header="false"-->
+<!--                 data-adapt-container-width="true"-->
+<!--                 data-hide-cover="false" data-show-facepile="true">-->
+<!--              <blockquote class="fb-xfbml-parse-ignore">-->
+<!--                <a [href]="facebook">Mettlesol</a>-->
+<!--              </blockquote>-->
+<!--            </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

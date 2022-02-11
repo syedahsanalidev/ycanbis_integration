@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path : 'social/facebook',
         loadChildren : ()=> import('./my-social-subscription/facebook/facebook.module').then(mod=>mod.FacebookModule)
+      },
+      {
+        path : 'social/instagram',
+        loadChildren : ()=> import('./my-social-subscription/instagram/instagram.module').then(mod=>mod.InstagramModule)
       }
     ]
   }

@@ -1,15 +1,15 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FacebookRoutingModule } from './facebook-routing.module';
-import { FacebookComponent } from './facebook/facebook.component';
+import { InstagramRoutingModule } from './instagram-routing.module';
+import { InstagramComponent } from './instagram/instagram.component';
 import { PolicyComponent } from './policy/policy.component';
 
 import { ExtendedWindow } from './models';
-import { FacebookService } from './facebook.service';
+import { InstagramService } from './instagram.service';
 import { DOCUMENT } from '@angular/common';
 
-function initializeAppFactory(fb: FacebookService, doc: Document): () => Promise<void> {
+function initializeAppFactory(fb: InstagramService, doc: Document): () => Promise<void> {
   return () => new Promise<void>((resolve) => {
 
     const extendedWindow: ExtendedWindow = window as unknown as ExtendedWindow;
@@ -24,18 +24,18 @@ function initializeAppFactory(fb: FacebookService, doc: Document): () => Promise
 
 @NgModule({
   declarations: [
-    FacebookComponent,
+    InstagramComponent,
     PolicyComponent
   ],
   imports: [
     CommonModule,
-    FacebookRoutingModule
+    InstagramRoutingModule
   ],
   providers: [{
     provide: APP_INITIALIZER,
     useFactory: initializeAppFactory,
     multi: true,
-    deps: [FacebookService, DOCUMENT],
+    deps: [InstagramService, DOCUMENT],
   }],
 })
-export class FacebookModule { }
+export class InstagramModule { }
