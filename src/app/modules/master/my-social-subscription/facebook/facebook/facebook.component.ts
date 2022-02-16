@@ -35,7 +35,7 @@ import {SocialFacebookService} from 'src/app/helper/http/social-facebook/social-
 export class FacebookComponent implements OnInit {
 
   facebookUrl: SafeResourceUrl = "";
-
+  EmptyFacebookUrl = false;
   faTachometerAlt = faTachometerAlt;
   faShapes = faShapes;
   faBuilding = faBuilding;
@@ -84,8 +84,9 @@ export class FacebookComponent implements OnInit {
       this.getSocialFeed({});
       this.getMySubscriptionList();
     });
-    let basicUrl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2058218827670845";
-    this.facebookUrl = this.sanitizer.bypassSecurityTrustResourceUrl(basicUrl);
+
+    // let basicUrl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2058218827670845";
+    // this.facebookUrl = this.sanitizer.bypassSecurityTrustResourceUrl(basicUrl);
   }
 
   /**
@@ -151,6 +152,9 @@ export class FacebookComponent implements OnInit {
    */
   social_unique_identification = null;
   fetchDataForScreenName(social_unique_identification: any, social_name: any) {
+    this.EmptyFacebookUrl = true;
+    let basicUrl = `https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F${social_unique_identification}%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2058218827670845`;
+    this.facebookUrl = this.sanitizer.bypassSecurityTrustResourceUrl(basicUrl);
     this.social_unique_identification = social_unique_identification;
     let queryObject = { screen_name: social_unique_identification, pageNumber: 1 };
     this.getSocialFeed(queryObject);

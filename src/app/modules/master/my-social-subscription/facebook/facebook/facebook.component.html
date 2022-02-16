@@ -381,15 +381,19 @@
               <div class="row h-100">
                 <div class="col mt-3">
                   <div class="text-center">
-                    <iframe [src]="facebookUrl"
-                            width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                    </iframe>
-                    <!--                      <img-->
-                    <!--                        src="./assets/images/twitter-tweets.svg"-->
-                    <!--                        alt="facebook"-->
-                    <!--                        height="250"-->
-                    <!--                      />-->
+                    <span *ngIf="EmptyFacebookUrl == true">
+                      <iframe [src]="facebookUrl"
+                              width="340" height="500" style="border:none;overflow:hidden" scrolling="no"
+                              frameborder="0" allowfullscreen="true"
+                              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                      </iframe>
+                    </span>
+                    <span *ngIf="EmptyFacebookUrl == false">
+                      <img
+                        src="./assets/images/facebook.png"
+                        alt="facebook"
+                        height="250"/>
+                    </span>
                     <div class="h6 mt-5 fw-normal">
                       Personalize Facebook Account
                     </div>
@@ -936,8 +940,8 @@
             </div>
             <span class="text-uppercase fw-bold"
             >Do you want to delete this group ?</span
-            ><br />
-            Once deleted you can't revert<br />
+            ><br/>
+            Once deleted you can't revert<br/>
             It will also delete the related facebook subscription account
           </div>
         </div>
@@ -1008,7 +1012,7 @@
             </div>
             <span class="text-uppercase fw-bold"
             >Do you want to delete this subscription ?</span
-            ><br />
+            ><br/>
             Once deleted you can't revert
           </div>
         </div>
@@ -1057,8 +1061,6 @@
     </div>
   </div>
 </ng-template>
-
-
 
 
 <!--<div class="container-fluid">-->
