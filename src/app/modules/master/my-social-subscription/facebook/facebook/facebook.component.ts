@@ -84,9 +84,6 @@ export class FacebookComponent implements OnInit {
       this.getSocialFeed({});
       this.getMySubscriptionList();
     });
-
-    // let basicUrl = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2058218827670845";
-    // this.facebookUrl = this.sanitizer.bypassSecurityTrustResourceUrl(basicUrl);
   }
 
   /**
@@ -273,7 +270,7 @@ export class FacebookComponent implements OnInit {
   async confirmToDeleteSub() {
     if (this.subscription) {
       let deleteObject = {
-        screen_name: this.subscription,
+        social_name: this.subscription,
         group_name: this.currentGroupName
       }
       let accessToken = await this.awsCognitoAuthenticatedUserService.getAuthenticatedUserToken();
@@ -363,13 +360,16 @@ export class FacebookComponent implements OnInit {
         (sub: any) => {
           this.isSubFormSubmitted = false;
           this.toastr.success('Success', `Added successfully !`);
+          this.ngOnInit();
           this.socialConnectModalRef?.hide();
         }, (errors: any) => {
           let { message } = errors;
           this.isSubFormSubmitted = false;
           this.errorMessage = message;
           this.toastr.error('Error', `Something went wrong, Please try again !`);
-        })
+        });
+      this.facebookSubForm.reset();
+      // await this.getMySubscriptionList();
     }
   }
 
@@ -388,13 +388,16 @@ export class FacebookComponent implements OnInit {
         (sub: any) => {
           this.isUserSubsGroupFormSubmiteed = false;
           this.toastr.success('Success', `Added successfully !`);
+          this.ngOnInit();
           this.userAddGroupSubsModalRef?.hide();
         }, (errors: any) => {
           let { message } = errors;
           this.isUserSubsGroupFormSubmiteed = false;
           this.userSubsGroupsErrorMessage = message;
           this.toastr.error('Error', `Something went wrong, Please try again !`);
-        })
+        });
+      this.userGroupSubForm.reset();
+      // await this.getMySubscriptionList();
     }
   }
 
