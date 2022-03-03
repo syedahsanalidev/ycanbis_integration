@@ -25,7 +25,6 @@ import {SocialNames} from 'src/app/helper/enum/social-names/social-names';
 import {AwsCognitoAuthenticatedUserService} from 'src/app/helper/services/AwsCognitoAuthenticatedUser/aws-cognito-authenticated-user.service';
 import * as _ from "lodash";
 import {SocialInstagramService} from 'src/app/helper/http/social-instagram/social-instagram.service';
-import Feed from "instagram-feed-embed";
 
 @Component({
   selector: 'app-instagram',
