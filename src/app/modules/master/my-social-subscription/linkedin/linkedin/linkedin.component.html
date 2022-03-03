@@ -1,0 +1,1152 @@
+<div class="ma-page">
+  <div class="" style="overflow-x: hidden;">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="ps-3 p-3 ma-border">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item">
+                <a
+                  [routerLink]="['/']"
+                  class="text-muted"
+                >My Motherboard</a
+                >
+              </li>
+              <li
+                class="breadcrumb-item active text-capitalize"
+                aria-current="page"
+              >
+                {{ social_name }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="row social-wrapper" *ngIf="social_name == socialNames.linkedin">
+      <div class="col-sm-12">
+        <div class="d-flex">
+          <div class="side-nav border-end">
+            <div class="h-100">
+              <table class="h-100 w-100">
+                <tr>
+                  <td class="align-top ps-2">
+                    <button
+                      type="button"
+                      class="
+                          btn
+                          fs0-9
+                          text-muted
+                          ps-2
+                          pe-2
+                          h-40px
+                          text-uppercase text-start
+                          shadow-none
+                          w-100
+                        "
+                      (click)="isTwitterCollapsed = !isTwitterCollapsed"
+                      [attr.aria-expanded]="!isTwitterCollapsed"
+                    >
+                      linkedin Group / Accounts
+                      <!-- <div class="float-end pointer" container="body" (click)="tweetsAccountSettings($event,editUserSubsGroupModal)"
+                          [adaptivePosition]="true" tooltip="Settings">
+                          <fa-icon [icon]="faCog"></fa-icon>
+                      </div> -->
+                    </button>
+                    <div
+                      class="border-0"
+                      id="twitterCollapsed"
+                      [collapse]="isTwitterCollapsed"
+                      [isAnimated]="true"
+                    >
+                      <div class="border-0">
+                        <accordion>
+                          <ng-container
+                            *ngFor="let mg of myGroup; let i = index"
+                          >
+                            <accordion-group>
+                              <li
+                                class="
+                                    list-group-item
+                                    border-0
+                                    cp
+                                    ps-4
+                                    text-primary
+                                  "
+                                accordion-heading
+                              >
+                                {{ mg.group_name }}
+
+                                <div class="float-end show-on-over">
+                                  <fa-icon
+                                    [icon]="faTrash"
+                                    class="fs0-9 me-2 text-primary"
+                                    (click)="
+                                        deleteGroupSocialSubs(
+                                          mg,
+                                          groupDeleteConfimationModal,
+                                          i
+                                        )
+                                      "
+                                  >
+                                  </fa-icon>
+                                  <!-- <fa-icon [icon]="faEllipsisH" class="fs0-9"></fa-icon> -->
+                                </div>
+                              </li>
+                              <ul class="list-group list-group-flush ms-3">
+                                <ng-container
+                                  *ngFor="
+                                      let msData of mySubscriptionList[
+                                        mg.group_name
+                                      ];
+                                      let i = index
+                                    "
+                                >
+                                  <li
+                                    class="list-group-item border-0 cp"
+                                    [ngClass]="{
+                                        'active rounded':
+                                          msData.social_unique_identification ===
+                                          social_unique_identification
+                                      }"
+                                    (click)="
+                                        fetchDataForScreenName(
+                                          msData.social_unique_identification,
+                                          socialNames.linkedin
+                                        )
+                                      "
+                                  >
+                                    @{{ msData.social_unique_identification }}
+                                    <div class="float-end show-on-over">
+                                      <fa-icon
+                                        [icon]="faTrash"
+                                        (click)="
+                                            deleteSocialSubs(
+                                              msData.social_unique_identification,
+                                              subDeleteConfimationModal,
+                                              i,
+                                              mg.group_name
+                                            )
+                                          "
+                                        class="fs0-9 me-2 text-dark"
+                                      >
+                                      </fa-icon>
+                                      <!-- <fa-icon [icon]="faEllipsisH" class="fs0-9"></fa-icon> -->
+                                    </div>
+                                  </li>
+                                </ng-container>
+                              </ul>
+                            </accordion-group>
+                          </ng-container>
+                        </accordion>
+                      </div>
+                    </div>
+
+                    <ng-container *ngIf="myGroup?.length == 0">
+                      <div class="mt-5 mb-5 text-center">
+                        <div class="h6 mt-5 fw-normal">
+                          Personalize linkedin Account
+                        </div>
+                        <div class="text-muted mt-2 fw-normal">
+                          The page published by the following, will be here.
+                        </div>
+                      </div>
+                    </ng-container>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-bottom">
+                    <div class="w-100">
+                      <div class="d-flex d-flex-row">
+                        <button
+                          class="
+                              btn
+                              fs0-9
+                              btn-default
+                              w-50
+                              bg-light
+                              ps-3
+                              pe-3
+                              text-uppercase
+                              shadow-none
+                              rounded-0
+                              h-40px
+                            "
+                          (click)="
+                              openAddUserSubsGroupModal(
+                                addUserSubsGroup,
+                                socialNames.linkedin
+                              )
+                            "
+                        >
+                          <fa-icon
+                            [icon]="faPlus"
+                            class="me-2 text-primary"
+                          ></fa-icon>
+                          Group
+                        </button>
+                        <button
+                          class="
+                              btn
+                              fs0-9
+                              btn-default
+                              w-50
+                              bg-light
+                              ps-3
+                              pe-3
+                              text-uppercase
+                              shadow-none
+                              rounded-0
+                              border-start
+                              h-40px
+                            "
+                          (click)="
+                              openSocialConnect(
+                                socialConnect,
+                                socialNames.linkedin
+                              )
+                            "
+                        >
+                          <fa-icon
+                            [icon]="faPlus"
+                            class="me-2 text-primary"
+                          ></fa-icon>
+                          linkedin
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+
+          <div class="main-content">
+            <div class="container-fluid" *ngIf="linkedinData.length != 0">
+              <div class="row justify-content-start mb-3">
+                <div class="col-sm-12 col-md-8 col-lg-7 col-xl-7">
+                  <div class="mt-3">
+                    <div
+                      class="
+                          d-flex
+                          align-items-start
+                          justify-content-between
+                          text-uppercase
+                        "
+                    >
+                      <div class="me-3">
+                        Total Tweets : {{ totalTweets }}
+                        <div *ngIf="showingFromTo" class="fs0-8 text-muted">
+                          Showing {{ showingFromTo?.showingFrom }} -
+                          {{ showingFromTo?.showingTo }} Tweets
+                        </div>
+                      </div>
+                      <pagination
+                        (pageChanged)="pageChanged($event)"
+                        [(ngModel)]="currentPage"
+                        [boundaryLinks]="true"
+                        [totalItems]="totalTweets"
+                        [rotate]="true"
+                        [maxSize]="5"
+                        previousText="&lsaquo;"
+                        nextText="&rsaquo;"
+                        firstText="&laquo;"
+                        lastText="&raquo;"
+                      >
+                      </pagination>
+                    </div>
+                  </div>
+                  <ng-container *ngFor="let td of linkedinData">
+                    <div class="card mt-4">
+                      <div class="card-body">
+                        <div class="d-flex mb-4">
+                          <div class="flex-shrink-0">
+                            <img
+                              src="{{ td.user.profile_image_url }}"
+                              class="rounded"
+                              alt="{{ td.user.name }}"
+                            />
+                          </div>
+                          <div class="flex-grow-1 ms-3">
+                            <div class="fw-bold">
+                              {{ td.user.name }}
+
+                              <div
+                                *ngIf="myFavGroup[td._id]"
+                                class="float-end pointer"
+                                container="body"
+                                (click)="
+                                    addToFavorties(td._id, socialNames.linkedin)
+                                  "
+                                [adaptivePosition]="true"
+                                tooltip="Add To Favorite"
+                              >
+                                <img
+                                  src="./assets/images/heart-solid.svg"
+                                  alt="Mark favorite"
+                                  height="18"
+                                />
+                              </div>
+
+                              <div
+                                *ngIf="!myFavGroup[td._id]"
+                                class="float-end pointer"
+                                container="body"
+                                (click)="
+                                    addToFavorties(td._id, socialNames.linkedin)
+                                  "
+                                [adaptivePosition]="true"
+                                tooltip="Add To Favorite"
+                              >
+                                <img
+                                  src="./assets/images/heart-regular-red.svg"
+                                  alt="Mark favorite"
+                                  height="18"
+                                />
+                              </div>
+                            </div>
+                            <div class="fw-normal">
+                              Screen Name : @{{ td.user.screen_name }}
+                              <span *ngIf="td.user.location">
+                                  ( {{ td.user.location }} )
+                                </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <ng-container *ngFor="let tm of td.entities.media">
+                          <img
+                            [src]="tm.media_url_https"
+                            class="card-img-top"
+                            alt="..."
+                          />
+                        </ng-container>
+
+                        <div
+                          class="card-title mt-3"
+                          [innerHtml]="td.full_text"
+                        ></div>
+                        <div class="text-info">
+                            <span
+                              class="me-2"
+                              *ngFor="let ht of td?.entities?.hashtags"
+                            >
+                              #{{ ht.text }}
+                            </span>
+                        </div>
+                        <div class="text-end mt-4">
+                          Posted At :
+                          {{ td.created_at | date: "yyyy-MM-dd:HH:MM" }}
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                  <div class="col-sm-12 mt-3" *ngIf="linkedinData.length != 0">
+                    <div
+                      class="
+                          d-flex
+                          align-items-start
+                          justify-content-between
+                          text-uppercase
+                        "
+                    >
+                      <div class="me-3">
+                        Total Tweets : {{ totalTweets }}
+                        <div *ngIf="showingFromTo" class="fs0-8 text-muted">
+                          Showing {{ showingFromTo?.showingFrom }} -
+                          {{ showingFromTo?.showingTo }} Tweets
+                        </div>
+                      </div>
+                      <pagination
+                        (pageChanged)="pageChanged($event)"
+                        [(ngModel)]="currentPage"
+                        [boundaryLinks]="true"
+                        [totalItems]="totalTweets"
+                        [rotate]="true"
+                        [maxSize]="5"
+                        previousText="&lsaquo;"
+                        nextText="&rsaquo;"
+                        firstText="&laquo;"
+                        lastText="&raquo;"
+                      >
+                      </pagination>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid" *ngIf="linkedinData.length == 0">
+              <div class="row h-100">
+                <div class="col mt-3">
+                  <div class="text-center">
+<!--                    <iframe src='https://widgets.sociablekit.com/linkedin-profile-posts/iframe/75326' frameborder='0' width='100%' height='1000'></iframe>-->
+<!--                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6644213809475043328/" height="872" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>-->
+                    <span *ngIf="EmptylinkedinUrl == true">
+                      <iframe [src]="linkedinUrl"
+                              height="752" width="600" style="border:none;overflow:hidden" scrolling="no"
+                              frameborder="0" allowfullscreen="true"
+                              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                      </iframe>
+                    </span>
+<!--                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light"-->
+<!--                         data-type="VERTICAL" data-vanity="abdur-rehman-6099a9128" data-version="v1">-->
+<!--                      <a class="badge-base__link LI-simple-link"-->
+<!--                         href="https://pk.linkedin.com/in/abdur-rehman-6099a9128?trk=profile-badge">Abdur Rehman-->
+<!--                      </a>-->
+<!--                    </div>-->
+
+                    <span *ngIf="EmptylinkedinUrl == false">
+                      <img
+                        src="./assets/images/linkedin.png"
+                        alt="linkedin"
+                        height="250"/>
+                    </span>
+                    <div class="h6 mt-5 fw-normal">
+                      Personalize linkedin Account
+                    </div>
+                    <div class="text-muted mt-2 fw-normal">
+                      The page published by the following, will be here.
+                    </div>
+                    <div class="text-muted mt-3 fw-normal">
+                      <button
+                        class="
+                            btn
+                            fs0-9
+                            btn-primary
+                            ps-3
+                            pe-3
+                            me-3
+                            rounded-pill
+                            text-uppercase
+                          "
+                        (click)="
+                            openAddUserSubsGroupModal(
+                              addUserSubsGroup,
+                              socialNames.linkedin
+                            )
+                          "
+                      >
+                        <fa-icon
+                          [icon]="faPlus"
+                          class="me-2 text-white"
+                        ></fa-icon>
+                        Personalize Group
+                      </button>
+                      <button
+                        class="
+                            btn
+                            fs0-9
+                            btn-primary
+                            ps-3
+                            pe-3
+                            rounded-pill
+                            text-uppercase
+                          "
+                        (click)="
+                            openSocialConnect(socialConnect, socialNames.linkedin)
+                          "
+                      >
+                        <fa-icon
+                          [icon]="faPlus"
+                          class="me-2 text-white"
+                        ></fa-icon>
+                        Personalize linkedin
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+                  p-4
+                  text-uppercase text-center text-dark
+                  fw-light
+                  fs0-9
+                  border-top
+                  bg-white
+                  mt-4
+                "
+            >
+              &#169; All rights preserved by ycanbis 2021
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #socialConnect>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left h6 text-uppercase">
+      Add Social Account For
+      <span class="text-uppercase fw-bold">{{ socialAccountName }}</span>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="mt-3 mb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 col-lg-12">
+            <form
+              [formGroup]="linkedinSubForm"
+              autocomplete="off"
+              (ngSubmit)="submitSubForm()"
+            >
+              <label
+                for="group_name"
+                class="form-label h6 fw-bold fs0-9 mb-0 text-uppercase"
+              >
+                Choose Tag To Group <sup class="text-danger">*</sup>
+              </label>
+              <div class="mb-border-0 mt-2 ng-select-wrapper">
+                <ng-select
+                  [items]="myGroup"
+                  [multiple]="false"
+                  formControlName="group_name"
+                  placeholder="Select group name"
+                  [closeOnSelect]="true"
+                  bindLabel="group_name"
+                >
+                </ng-select>
+              </div>
+
+              <div class="mb-3 text-end">
+                <small
+                  class="text-danger mt-1"
+                  *ngIf="
+                      linkedinSubForm.get('group_name')?.touched &&
+                      linkedinSubForm.get('group_name')?.hasError('required')
+                    "
+                >
+                  This field is required.
+                </small>
+                <small
+                  class="text-danger mt-1"
+                  *ngIf="
+                      linkedinSubForm.get('group_name')?.touched &&
+                      linkedinSubForm
+                        .get('group_name')
+                        ?.hasError('social_unique_identification')
+                    "
+                >
+                  Please select group.
+                </small>
+              </div>
+
+              <label
+                for="social_unique_identification"
+                class="form-label h6 fs0-9 fw-bold mb-0 mt-3 text-uppercase"
+              >
+                  <span class="">{{
+                    socialAccountName
+                    }}</span>
+                Screen Name <sup class="text-danger">*</sup>
+              </label>
+              <div class="input-group mb-border-0 mt-2">
+                <input
+                  type="text"
+                  class="form-control border-0 br-start h-45px bg-light shadow-none ps-4"
+                  id="social_unique_identification"
+                  placeholder="Enter linkedin screen name"
+                  aria-describedby="basic-addon-social_unique_identification"
+                  formControlName="social_unique_identification"
+                  [class.is-invalid]="
+                      linkedinSubForm.get('social_unique_identification')
+                        ?.invalid &&
+                      (linkedinSubForm.get('social_unique_identification')
+                        ?.dirty ||
+                        linkedinSubForm.get('social_unique_identification')
+                          ?.touched)
+                    "
+                />
+                <span
+                  class="
+                      input-group-text
+                      bg-light
+                      pe-4
+                      ps-4
+                      br-end
+                      border-0
+                      h-45px
+                      text-primary
+                    "
+                  id="basic-addon-social_unique_identification"
+                >
+                      <fa-icon [icon]="faComment" class="me-2 text-primary"></fa-icon>
+                  </span>
+              </div>
+
+              <div class="mb-3 text-end">
+                <small
+                  class="text-danger mt-1"
+                  *ngIf="
+                      linkedinSubForm.get('social_unique_identification')
+                        ?.touched &&
+                      linkedinSubForm
+                        .get('social_unique_identification')
+                        ?.hasError('required')
+                    "
+                >
+                  This field is required.
+                </small>
+                <small
+                  class="text-danger mt-1"
+                  *ngIf="
+                      linkedinSubForm.get('social_unique_identification')
+                        ?.touched &&
+                      linkedinSubForm
+                        .get('social_unique_identification')
+                        ?.hasError('social_unique_identification')
+                    "
+                >
+                  Enter valid linkedin screen name.
+                </small>
+              </div>
+
+              <div class="mt-4 text-end">
+                <button
+                  type="button"
+                  class="
+                      btn
+                      fs0-9
+                      shadow
+                      btn-danger
+                      ps-4
+                      pe-4
+                      pt-2
+                      pb-2
+                      text-white
+                      me-3
+                      rounded-pill
+                      text-uppercase
+                    "
+                  (click)="socialConnectModalRef?.hide()"
+                >
+                  <fa-icon [icon]="faTimes" class="me-2 text-white"></fa-icon>
+                  Close
+                </button>
+
+                <button
+                  type="submit"
+                  class="
+                      btn
+                      fs0-9
+                      shadow
+                      btn-primary
+                      ps-4
+                      pe-4
+                      pt-2
+                      text-white
+                      pb-2
+                      rounded-pill
+                      text-uppercase
+                    "
+                >
+                  <fa-icon [icon]="faSave" class="me-2 text-white"></fa-icon>
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #addUserSubsGroup>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left h6 text-uppercase">
+      Add Group For
+      <span class="text-uppercase fw-bold">{{ socialAccountName }}</span>
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="mt-3 mb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 col-lg-12">
+            <form
+              [formGroup]="userGroupSubForm"
+              autocomplete="off"
+              (ngSubmit)="submitAddUserSubsGroupForm()"
+            >
+              <label
+                for="group_name"
+                class="form-label h6 mb-0 fw-bold fs0-9 text-uppercase"
+              >
+                  <span class=" text-uppercase fw-bold">{{
+                    socialAccountName
+                    }}</span>
+                Group Name <sup class="text-danger">*</sup>
+              </label>
+              <div class="input-group mb-border-0 mt-2">
+                <input
+                  type="text"
+                  class="
+                      form-control
+                      border-0
+                      br-start
+                      ps-4
+                      shadow-none
+                      h-45px
+                      bg-light
+                    "
+                  id="group_name"
+                  placeholder="Enter group name"
+                  aria-describedby="basic-addon-group_name"
+                  formControlName="group_name"
+                  [class.is-invalid]="
+                      userGroupSubForm.get('group_name')?.invalid &&
+                      (userGroupSubForm.get('group_name')?.dirty ||
+                        userGroupSubForm.get('group_name')?.touched)
+                    "
+                />
+                <span
+                  class="
+                      input-group-text
+                      pe-4
+                      ps-4
+                      br-end
+                      border-0
+                      h-45px
+                      bg-light
+                      text-primary
+                    "
+                  id="basic-addon-group_name"
+                >
+                      <fa-icon [icon]="faUsers" class="text-primary"></fa-icon>
+                  </span>
+              </div>
+
+              <div class="mb-3 text-end">
+                <small
+                  class="text-danger mt-1"
+                  *ngIf="
+                      userGroupSubForm.get('group_name')?.touched &&
+                      userGroupSubForm.get('group_name')?.hasError('required')
+                    "
+                >
+                  This field is required.
+                </small>
+                <small
+                  class="text-danger mt-1"
+                  *ngIf="
+                      userGroupSubForm.get('group_name')?.touched &&
+                      userGroupSubForm
+                        .get('group_name')
+                        ?.hasError('social_unique_identification')
+                    "
+                >
+                  Enter valid group name.
+                </small>
+              </div>
+
+              <div class="mt-4 text-end">
+                <button
+                  type="button"
+                  class="
+                      btn
+                      fs0-9
+                      shadow
+                      btn-danger
+                      ps-4
+                      pe-4
+                      pt-2
+                      pb-2
+                      text-white
+                      me-3
+                      rounded-pill
+                      text-uppercase
+                    "
+                  (click)="userAddGroupSubsModalRef?.hide()"
+                >
+                  <fa-icon [icon]="faTimes" class="me-2 text-white"></fa-icon>
+                  Close
+                </button>
+
+                <button
+                  type="submit"
+                  class="
+                      btn
+                      fs0-9
+                      shadow
+                      btn-primary
+                      ps-4
+                      pe-4
+                      pt-2
+                      text-white
+                      pb-2
+                      rounded-pill
+                      text-uppercase
+                    "
+                >
+                  <fa-icon [icon]="faSave" class="me-2 text-white"></fa-icon>
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editUserSubsGroupModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left h6 text-uppercase">
+      Edit linkedin Subscription
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="mt-3 mb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 col-lg-12 text-center">
+            <div>Upcoming</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #customizeDashboard>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left h6 text-uppercase">
+      Customize My Dashboard
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="mt-3 mb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
+            <div class="text-uppercase fw-normal">
+              <fa-icon [icon]="faTh" class="pe-2 ps-2 text-primary"></fa-icon>
+              Categoires
+            </div>
+            <div class="mt-2">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
+            <div class="text-uppercase fw-normal">
+              <fa-icon
+                [icon]="faBuilding"
+                class="pe-2 ps-2 text-primary"
+              ></fa-icon>
+              Company
+            </div>
+            <div class="mt-2">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 text-end"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 text-end">
+      <button
+        type="button"
+        class="
+            btn
+            fs0-9
+            shadow
+            text-primary
+            btn-dark
+            ps-4
+            pe-4
+            pt-2
+            pb-2
+            text-white
+            me-3
+            rounded-pill
+            text-uppercase
+          "
+        (click)="customizeModalRef?.hide()"
+      >
+        <fa-icon [icon]="faTimes" class="me-2 text-white"></fa-icon>
+        Close
+      </button>
+
+      <button
+        class="
+            btn
+            fs0-9
+            shadow
+            text-primary
+            btn-light
+            ps-4
+            pe-4
+            pt-2
+            text-dark
+            me-3
+            pb-2
+            rounded-pill
+            text-uppercase
+          "
+      >
+        <fa-icon [icon]="faSave" class="me-2 text-dark"></fa-icon>
+        Save
+      </button>
+      <button
+        class="
+            btn
+            fs0-9
+            shadow
+            text-primary
+            btn-light
+            ps-4
+            pe-4
+            text-primary
+            pt-2
+            pb-2
+            rounded-pill
+            text-uppercase
+          "
+      >
+        <fa-icon [icon]="faCircle" class="me-2 text-primary"></fa-icon>
+        Live
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #groupDeleteConfimationModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left h6 text-uppercase">
+      Group Delete Confirmation Modal
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="mt-3 mb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <div class="mb-3">
+              <img
+                src="./assets/images/group.png"
+                class=""
+                height="100"
+                alt="group"
+              />
+            </div>
+            <span class="text-uppercase fw-bold"
+            >Do you want to delete this group ?</span
+            ><br/>
+            Once deleted you can't revert<br/>
+            It will also delete the related linkedin subscription account
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 mb-3 me-3 text-end">
+      <button
+        class="
+            btn
+            fs0-9
+            shadow
+            btn-primary
+            ps-4
+            pe-4
+            pt-2
+            text-white
+            me-3
+            pb-2
+            rounded-pill
+            text-uppercase
+          "
+        (click)="confirmToDeleteGroup()"
+      >
+        <fa-icon [icon]="faCheck" class="mt-1 fs0-9 pe-2"></fa-icon>
+        Yes
+      </button>
+      <button
+        class="
+            btn
+            fs0-9
+            shadow
+            text-white
+            btn-danger
+            ps-4
+            pe-4
+            pt-2
+            pb-2
+            rounded-pill
+            text-uppercase
+          "
+        (click)="groupDeleteConfimationModalRef?.hide()"
+      >
+        <fa-icon [icon]="faTimes" class="text-white mt-1 fs0-9 pe-2"></fa-icon>
+        No
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #subDeleteConfimationModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left h6 text-uppercase">
+      Subscription Delete Confirmation Modal
+    </h4>
+  </div>
+  <div class="modal-body">
+    <div class="mt-3 mb-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <div class="mb-3">
+              <img
+                src="./assets/images/subscription.png"
+                class=""
+                height="100"
+                alt="group"
+              />
+            </div>
+            <span class="text-uppercase fw-bold"
+            >Do you want to delete this subscription ?</span
+            ><br/>
+            Once deleted you can't revert
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 mb-3 me-3 text-end">
+      <button
+        class="
+            btn
+            fs0-9
+            shadow
+            btn-primary
+            ps-4
+            pe-4
+            pt-2
+            text-white
+            me-3
+            pb-2
+            rounded-pill
+            text-uppercase
+          "
+        (click)="confirmToDeleteSub()"
+      >
+        <fa-icon [icon]="faCheck" class="mt-1 fs0-9 pe-2"></fa-icon>
+        Yes
+      </button>
+      <button
+        class="
+            btn
+            fs0-9
+            shadow
+            text-white
+            btn-danger
+            ps-4
+            pe-4
+            pt-2
+            pb-2
+            rounded-pill
+            text-uppercase
+          "
+        (click)="subDeleteConfimationModalRef?.hide()"
+      >
+        <fa-icon [icon]="faTimes" class="text-white mt-1 fs0-9 pe-2"></fa-icon>
+        No
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row mt-5">-->
+<!--    <div class="col-sm-12">-->
+<!--      <div class="container">-->
+<!--        <div class="row mt-5">-->
+<!--          <div class="col mt-3">-->
+
+<!--            <div class="content" role="main">-->
+<!--              <h2>Pages</h2>-->
+<!--              <p>Here are some linkedin pages to view:</p>-->
+<!--              <div class="card-container">-->
+<!--                <div *ngFor="let brand of brands" class="card" (click)="selectBrand(brand)"-->
+<!--                     [class.active]="selectedBrand === brand">-->
+<!--                  {{brand.name}}-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="brand-details" [class.visible]="selectedBrand">-->
+<!--                <h2>{{selectedBrand?.name}}</h2>-->
+<!--                <p>Here is the linkedin page for the selected page:</p>-->
+<!--                <div #embeddedContentContainer class="embedded-content">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--Iframe-->
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row mt-5">-->
+<!--    <div class="col-sm-12">-->
+<!--      <div class="container">-->
+<!--        <div class="row mt-5">-->
+<!--          <div class="col mt-3">-->
+<!--            <iframe src="https://www.linkedin.com/plugins/page.php?href=https%3A%2F%2Fwww.linkedin.com%2Fmettlesolution%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2058218827670845"-->
+<!--                    width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"-->
+<!--                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">-->
+<!--            </iframe>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--JavaScript SDK-->
+
+<!--<div class="container-fluid">-->
+<!--  <div class="row mt-5">-->
+<!--    <div class="col-sm-12">-->
+<!--      <div class="container">-->
+<!--        <div class="row mt-5">-->
+<!--          <div class="col mt-3">-->
+<!--            <button (click)="handleChangeFb()">Change</button>-->
+<!--            <div>{{linkedin}}</div>-->
+<!--            <div id="fb-container">-->
+<!--            <a class="fb-page" [href]="linkedin"-->
+<!--                 data-tabs="timeline" data-width="" data-height="" data-small-header="false"-->
+<!--                 data-adapt-container-width="true"-->
+<!--                 data-hide-cover="false" data-show-facepile="true">-->
+<!--              <blockquote class="fb-xfbml-parse-ignore">-->
+<!--                <a [href]="linkedin">Mettlesol</a>-->
+<!--              </blockquote>-->
+<!--            </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
