@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterComponent } from './master.component';
+import {ProfileComponent} from "./Profile/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -27,9 +28,14 @@ const routes: Routes = [
       {
         path : 'social/linkedin',
         loadChildren : ()=> import('./my-social-subscription/linkedin/linkedin.module').then(mod=>mod.LinkedinModule)
+      },
+      {
+        path: 'Profile',
+        loadChildren : ()=> import('./Profile/profile.module').then(mod=>mod.ProfileModule)
       }
     ]
   }
+
 ];
 
 @NgModule({
