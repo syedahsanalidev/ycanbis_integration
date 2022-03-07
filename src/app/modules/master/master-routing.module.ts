@@ -13,16 +13,20 @@ const routes: Routes = [
     component: MasterComponent,
     children: [
       {
-        path : '',
-        loadChildren : ()=> import('./dashboard/dashboard.module').then(mod=>mod.DashboardModule)
+        path: '',
+        loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule)
       },
       {
-        path : 'social/facebook',
-        loadChildren : ()=> import('./my-social-subscription/facebook/facebook.module').then(mod=>mod.FacebookModule)
+        path: 'social/facebook',
+        loadChildren: () => import('./my-social-subscription/facebook/facebook.module').then(mod => mod.FacebookModule)
       },
       {
-        path : 'social/instagram',
-        loadChildren : ()=> import('./my-social-subscription/instagram/instagram.module').then(mod=>mod.InstagramModule)
+        path: 'social/instagram',
+        loadChildren: () => import('./my-social-subscription/instagram/instagram.module').then(mod => mod.InstagramModule)
+      },
+      {
+        path: 'social/linkedin',
+        loadChildren: () => import('./my-social-subscription/linkedin/linkedin.module').then(mod => mod.LinkedinModule)
       }
     ]
   }

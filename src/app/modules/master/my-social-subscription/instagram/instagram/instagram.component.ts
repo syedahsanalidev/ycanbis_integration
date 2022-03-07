@@ -19,7 +19,7 @@ export class InstagramComponent implements OnInit {
 
   @ViewChild('embeddedContentContainer') embeddedContentContainer: ElementRef<HTMLDivElement> | undefined = undefined;
 
-  constructor(private facebookService: InstagramService) {}
+  constructor(private facebookService: InstagramService) { }
 
   ngOnInit(): void {
   }
@@ -52,7 +52,7 @@ export class InstagramComponent implements OnInit {
       container.innerHTML = innerHTML;
 
       // @ts-ignore
-      if ( typeof window['instgrm'] !== 'undefined' ) {
+      if (typeof window['instgrm'] !== 'undefined') {
         // @ts-ignore
         window['instgrm'].Embeds.process();
       }
