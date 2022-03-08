@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng s -o --port 4201 --ssl=true",
+    "start": "ng s -o --port 4201 ",
     "pb": "ng build --prod --source-map=false --output-hashing=bundles --aot --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
