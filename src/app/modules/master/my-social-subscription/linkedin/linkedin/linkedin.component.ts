@@ -435,5 +435,4 @@ export class LinkedinComponent implements OnInit {
     this.editUserSubsGroupModalRef = this.modalService.show(editUserSubsGroupModal, Object.assign({ ...config }, { class: 'modal-xl modal-margin-zero modal-dialog-centered' }));
   }
 
-
 }

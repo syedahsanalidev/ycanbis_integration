@@ -35,6 +35,6 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     TooltipModule.forRoot(),
     ToastrModule.forRoot()
   ],
-  providers : [ToastrService]
+  providers: [ToastrService]
 })
 export class LinkedinModule { }

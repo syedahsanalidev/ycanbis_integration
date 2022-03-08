@@ -1,0 +1,42 @@
+.profiletimeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 40px 10px 0 30px;
+    border-left: 1px solid $border-color;
+    .sl-left {
+        float: $lft;
+        margin-left: -60px;
+        z-index: 1;
+        margin-right: 15px;
+        img {
+            max-width: 40px;
+        }
+    }
+}
+
+.profiletimeline .sl-item {
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+.profiletimeline .sl-date {
+    font-size: 12px;
+    color: $text-muted;
+}
+
+.cus-container {
+  background-color: #eef5f9 !important;
+  margin-top: 5.5rem !important;
+}
+
+.link{
+  text-decoration: none !important;
+}
+.cus-link{
+  color: #467958 !important;
+  text-decoration: none !important;
+}
+
+.progress {
+  height: 5px !important;
+}

@@ -8,9 +8,9 @@ describe('LinkedinComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LinkedinComponent ]
+      declarations: [LinkedinComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
