@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterComponent } from './master.component';
-import {ProfileComponent} from "./Profile/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -32,6 +31,10 @@ const routes: Routes = [
       {
         path: 'Profile',
         loadChildren : ()=> import('./Profile/profile.module').then(mod=>mod.ProfileModule)
+      },
+      {
+        path: 'contact-grid',
+        loadChildren : ()=> import('./contact-grid/contact.module').then(mod=>mod.ContactModule)
       }
     ]
   }
