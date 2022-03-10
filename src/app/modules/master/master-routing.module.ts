@@ -27,6 +27,10 @@ const routes: Routes = [
       {
         path: 'dashboards',
         loadChildren: () => import('./dashboards/dashboard.module').then(mod => mod.DashboardModule)
+      },
+      {
+        path: 'dashboards-nice-admin',
+        loadChildren: () => import('./dashboard-nice-admin/dashboard-nice.module').then(mod => mod.DashboardNiceModule)
       }
     ]
   }

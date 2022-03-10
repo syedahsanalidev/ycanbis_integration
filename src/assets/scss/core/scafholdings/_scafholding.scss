@@ -17,9 +17,6 @@ html {
 
 a {
     color: $themecolor;
-    &:hover {
-        color: $body-color;
-    }
 }
 
 a:hover,
@@ -48,15 +45,6 @@ a.link {
     }
 }
 
-.lstick {
-    width: 2px;
-    background: $themecolor;
-    height: 30px;
-    margin-left: -20px;
-    margin-right: 18px;
-    display: inline-block;
-    vertical-align: middle;
-}
 
 
 /*******************
@@ -118,11 +106,7 @@ Opacity
     opacity: 0.3;
 }
 
-// Table header border 0
 
-// .table th, .table thead th {
-//     border: 0;
-// }
 
 /*******************
 font weight
@@ -143,9 +127,6 @@ html body {
     }
     .font-16 {
         font-size: 16px;
-    }
-    .font-15 {
-        font-size: 15px;
     }
     .font-12 {
         font-size: 12px;
@@ -273,7 +254,7 @@ Labels
 ******************/
 
 .badge {
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-light;
     line-height: normal;
     &.badge-pill {
         padding: 0.20em 0.6em;
@@ -315,6 +296,14 @@ ul.list-style-none {
     }
 }
 
+.btn {
+	margin: 0 0 8px 8px;
+}
+
+.input-group-append .btn {
+	margin: 0;
+}
+
 
 /*******************
 Card
@@ -322,7 +311,6 @@ Card
 
 .card {
     margin-bottom: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.05);
     .card-subtitle {
         font-weight: $font-weight-light;
         margin-bottom: 10px;

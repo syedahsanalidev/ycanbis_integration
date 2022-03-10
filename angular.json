@@ -20,6 +20,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "c3",
+              "rxjs",
+              "date-fns",
+              "rxjs-compat",
+              "angular-calendar",
+              "chart.js",
+              "@mattlewis92/dom-autoscroller"
+            ],
             "outputPath": "dist/testang",
             "index": "src/index.html",
             "main": "src/main.ts",

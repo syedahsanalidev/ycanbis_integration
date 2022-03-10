@@ -1,6 +1,9 @@
-.campaign {
+/*******************
+ sales chart
+*******************/
+.sales {
   position: relative;
-  height: 250px;
+  height: 270px;
 
   .ct-series-a .ct-area {
     fill-opacity: 0.2;
@@ -10,22 +13,26 @@
   .ct-series-a .ct-line,
   .ct-series-a .ct-point {
     stroke: $info;
-    stroke-width: 2px;
+    stroke-width: 3px;
   }
 
   .ct-series-b .ct-area {
-    fill: $cyan;
+    fill: $gray-400;
     fill-opacity: 0.1;
   }
 
   .ct-series-b .ct-line,
   .ct-series-b .ct-point {
-    stroke: $cyan;
-    stroke-width: 2px;
+    stroke: $gray-400;
+    stroke-width: 3px;
   }
 
   .ct-series-a .ct-point,
   .ct-series-b .ct-point {
-    stroke-width: 6px;
+    stroke-width: 5px;
+  }
+
+  .ct-grid {
+    stroke-width: 0.5px;
   }
 }

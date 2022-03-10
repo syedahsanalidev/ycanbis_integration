@@ -1,0 +1,19 @@
+.btn-purple {
+  color: #000 !important;
+  background-color: #8b5edd !important;
+  border-color: #8b5edd !important;
+}
+.cus-plusBtn {
+  margin-left: 0 !important;
+}
+.popover-icon:hover {
+  z-index: 10 !important;
+  position: relative !important;
+}
+.popover-icon {
+  margin-left: -15px !important;
+}
+
+.table > :not(:first-child) {
+  border-top: 1px solid currentColor !important;
+}

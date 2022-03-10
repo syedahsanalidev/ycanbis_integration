@@ -30,6 +30,7 @@
           }
         }
         .nav-toggler,
+        .sidebartoggler,
         .topbartoggler {
           color: $body-color;
         }
@@ -61,25 +62,10 @@
       &[data-sidebarbg="skin1"],
       &[data-sidebarbg="skin1"] ul {
         background: $skin1;
-        .create-btn {
-          background: $cyan;
-        }
       }
       &[data-sidebarbg="skin2"],
       &[data-sidebarbg="skin2"] ul {
         background: $skin2;
-
-        &::after {
-          background: url(/../../assets/images/background/sidebarbg.png)
-            no-repeat;
-          position: absolute;
-          top: 0px;
-          content: "";
-          width: 100%;
-          height: 100%;
-          opacity: 0.1;
-          z-index: -1;
-        }
       }
       &[data-sidebarbg="skin3"],
       &[data-sidebarbg="skin3"] ul {
@@ -92,9 +78,6 @@
       &[data-sidebarbg="skin5"],
       &[data-sidebarbg="skin5"] ul {
         background: $skin5;
-        .create-btn {
-          background: $cyan;
-        }
       }
       &[data-sidebarbg="skin6"] {
         background: $skin6;
@@ -104,51 +87,21 @@
             .sidebar-item {
               .sidebar-link {
                 color: $sidebar-text-dark;
-                opacity: 1;
-                i {
-                  color: $sidebar-icons-dark;
-                }
-                &:hover,
-                &.active {
-                  color: $info;
-                  i {
-                    color: $info;
-                  }
-                }
-              }
-              &.active > .sidebar-link {
-                color: $info;
                 i {
                   color: $info;
-                }
-              }
-              .first-level {
-                .sidebar-item.active .sidebar-link {
-                  color: $info;
-                  i {
-                    color: $info;
-                  }
                 }
               }
             }
             .nav-small-cap {
               color: $sidebar-text-dark;
-              opacity: 0.7;
             }
           }
+
           .has-arrow {
             &::after {
               border-color: $sidebar-text-dark;
             }
           }
-          .user-content,
-          .user-name,
-          .user-email {
-            color: $theme-dark;
-          }
-        }
-        .create-btn {
-          background: $cyan;
         }
       }
     }

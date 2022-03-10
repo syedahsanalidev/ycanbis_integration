@@ -1,12 +1,9 @@
 // Sidebar
 $sidebar-link-padding: 12px 15px;
-$sidebar-icon-size: 24px;
+$sidebar-icon-size: 20px;
 $sidebar-first-level-padding: 0 0 10px 0;
-$sidebar-first-level-link-padding: 2px 15px;
+$sidebar-first-level-link-padding: 10px 15px;
 $sidebar-first-level-icon-size: 14px;
-$sidebar-second-level-padding: 0 0 0px 20px;
-$small-cap-padding: 12px 23px 12px 0;
-
 /*******************
 Main sidebar
 ******************/
@@ -17,7 +14,7 @@ Main sidebar
   height: 100%;
   top: 0px;
   z-index: 99;
-  padding-top: $topbar-height;
+  padding-top: 64px;
   background: $sidebar;
   box-shadow: $shadow;
   transition: 0.2s ease-in;
@@ -26,9 +23,9 @@ Main sidebar
 /*******************
 sidebar navigation
 ******************/
+
 .scroll-sidebar {
   height: calc(100% - 20px);
-  overflow: auto;
   position: relative;
 }
 
@@ -39,8 +36,7 @@ sidebar navigation
 .sidebar-nav {
   ul {
     .sidebar-item {
-      // width: $sidebar-width-full;
-      margin-bottom: 5px;
+      width: $sidebar-width-full;
       .sidebar-link {
         color: $sidebar-text;
         padding: $sidebar-link-padding;
@@ -48,17 +44,7 @@ sidebar navigation
         white-space: nowrap;
         align-items: center;
         line-height: 25px;
-        opacity: 0.4;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 400;
-        .side-badge.badge {
-          position: absolute;
-          right: 32px;
-          top: 17px;
-          padding: 3px 10px;
-          border-radius: 4px;
-        }
+        opacity: 0.7;
         i {
           font-style: normal;
           width: 35px;
@@ -73,57 +59,63 @@ sidebar navigation
           opacity: 1;
         }
       }
-      &.active > .sidebar-link,
-      &.selected > .sidebar-link,
-      &:hover > .sidebar-link {
-        /*background: rgba(0, 0, 0, 0.04);*/
-        opacity: 1;
+      &.selected > .sidebar-link {
+        color: $white;
+        i {
+          color: $white;
+        }
       }
+
       /*******************
-					 First level
-					 ******************/
+           First level
+           ******************/
       .first-level {
         padding: $sidebar-first-level-padding;
-        .sidebar-item.active > .sidebar-link {
+        > .sidebar-item.active > .sidebar-link {
           opacity: 1;
         }
         .sidebar-item .sidebar-link {
           padding: $sidebar-first-level-link-padding;
           i {
             font-size: $sidebar-first-level-icon-size;
-            visibility: hidden;
           }
         }
       }
-      .second-level .sidebar-item {
-        padding: $sidebar-second-level-padding;
-      }
     }
     /*******************
-		 Small cap
-		 ******************/
+         Small cap
+         ******************/
     .nav-small-cap {
       font-size: 12px;
-      padding: $small-cap-padding;
+      padding: $sidebar-link-padding;
       white-space: nowrap;
       display: flex;
       align-items: center;
       line-height: 30px;
       margin-top: 10px;
       color: $sidebar-text;
-      opacity: 0.4;
-      font-weight: 500;
+      opacity: 0.3;
+      text-transform: uppercase;
       i {
         line-height: 30px;
         margin: 0 5px;
-        // display: none;
       }
     }
   }
+  > #sidebarnav > .sidebar-item > .sidebar-link:hover,
+  > #sidebarnav > .sidebar-item.selected > .sidebar-link {
+    background: rgba(0, 0, 0, 0.1);
+    border-left: 2px solid $info;
+  }
+  > #sidebarnav > .sidebar-item > .sidebar-link {
+    border-left: 2px solid transparent;
+  }
 }
+
 /*******************
  common m-p removed
 ******************/
+
 .sidebar-nav {
   ul {
     margin: 0px;
@@ -133,12 +125,15 @@ sidebar navigation
     }
   }
 }
+
 .collapse.in {
   display: block;
 }
+
 /*******************
 Down arrow
 ******************/
+
 .sidebar-nav .has-arrow {
   position: relative;
   &::after {
@@ -158,7 +153,7 @@ Down arrow
     -ms-transform-origin: top;
     -o-transform-origin: top;
     transform-origin: top;
-    top: 26px;
+    top: 25px;
     right: 15px;
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
@@ -169,6 +164,7 @@ Down arrow
 /*.sidebar-nav .active > .has-arrow::after,*/
 
 /*.sidebar-nav li.selected > .has-arrow::after,*/
+
 .sidebar-nav li.active > .has-arrow::after,
 .sidebar-nav li > .has-arrow.active::after,
 .sidebar-nav .has-arrow[aria-expanded="true"]::after {
@@ -176,27 +172,6 @@ Down arrow
   -ms-transform: rotate(-135deg) translate(0, -50%);
   -o-transform: rotate(-135deg) translate(0, -50%);
   transform: rotate(-135deg) translate(0, -50%);
-}
-
-.user-profile {
-  padding: 10px 0 10px 10px;
-  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
-  > .sidebar-link {
-    padding: 12px 0 8px 8px !important;
-  }
-  span {
-    img {
-      width: 30px;
-      border-radius: 100%;
-      margin-right: 10px;
-    }
-  }
-  ul {
-    padding-left: 47px;
-    li {
-      margin-top: 8px;
-    }
-  }
 }
 
 // truncate

@@ -28,8 +28,15 @@
         align-items: center;
         margin: 0px;
         padding: $topbar-navbrand-padding;
+        justify-content: space-between;
         .dark-logo {
           display: none;
+        }
+        .logo-icon {
+          margin-right: 5px;
+        }
+        .sidebartoggler {
+          color: $white;
         }
       }
     }
@@ -38,6 +45,12 @@
       font-size: $topbar-navlink-font-size;
       line-height: $topbar-navlink-height;
       height: $topbar-navlink-height;
+      .noti {
+        position: absolute;
+        top: 13px;
+        left: 28px;
+        font-size: 60%;
+      }
     }
     .navbar-nav > .nav-item {
       transition: 0.2s ease-in;
@@ -69,7 +82,8 @@
       display: block;
     }
     .form-control {
-      padding: 30px 20px;
+      padding: 23px 40px 20px 23px;
+      height: 64px;
       @extend %square;
       transition: $transitions;
       &:focus {
@@ -95,9 +109,8 @@ Megamenu
       padding: 30px;
       @extend %square;
       width: 100%;
-      min-height: 480px;
+      max-height: 480px;
       overflow: auto;
-      transform: translate(0px, 58px) !important;
     }
   }
 }
@@ -107,8 +120,28 @@ Designed dropdown
 .topbar {
   .dropdown-menu {
     padding-top: 0px;
-    border: 1px solid rgba(120, 130, 140, 0.13);
+    border: 0px;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    .with-arrow {
+      position: absolute;
+      height: 10px;
+      overflow: hidden;
+      width: 40px;
+      top: -10px;
+      > span {
+        @extend %rotate45;
+        background-color: $white;
+        width: 15px;
+        height: 15px;
+        top: 3px;
+        left: 15px;
+        position: absolute;
+        content: "";
+        -moz-border-radius: 6px 0 0 0;
+        border-radius: 6px 0 0 0;
+        /*box-shadow:-3px -3px 8px rgba(0, 0, 0, 0.1);    */
+      }
+    }
     &.dropdown-menu-right {
       .with-arrow {
         right: 0px;
@@ -132,17 +165,14 @@ Topbar Responsive
       width: 100%;
       border-top: 1px solid $border-color;
     }
-    .navbar-nav {
-      flex-direction: row;
-    }
-    .navbar-nav > .nav-item > .nav-link {
-      padding: 0 10px;
-    }
     .navbar-header {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: space-between;
+    }
+    .navbar-nav {
+      flex-direction: row;
     }
   }
 }
@@ -162,6 +192,19 @@ Topbar Responsive
       .with-arrow {
         display: none;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .mailbox {
+    .message-center {
+      height: 110px !important;
+    }
+  }
+  .user-dd {
+    .profile-dis {
+      height: 110px;
     }
   }
 }

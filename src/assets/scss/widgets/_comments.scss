@@ -6,21 +6,23 @@
     position: relative;
     margin-bottom: 10px;
     .comment-row {
-        border-bottom:1px solid $border-color;
-        padding: 15px;
+        border-bottom:1px solid transparent;
+        padding: 14px;
+        display: flex;
+        margin: 10px 0;
         &:last-child{
             border-bottom:0px;
         }
         &:hover,
         &.active {
-            background:$light;
+            background:$transparent-dark-bg; 
         }
     }
 }
 
 .comment-text {
-    padding: 15px 15px 15px 20px;
-    width:80%;
+    padding-left: 15px;
+    width:100%;
     &:hover .comment-footer,
     &.active .comment-footer {
         .action-icons {
@@ -28,11 +30,11 @@
         }
     }
     p {
-        max-height: 50px;
+        max-height: 65px;
         width:100%;
         overflow: hidden;
         
-    }
+    } 
 }
 
 .comment-footer {
@@ -41,7 +43,7 @@
         a {
             padding-left: 7px;
             vertical-align: middle;
-            color: $text-muted;
+            color: $gray-500;
             &:hover,
             &.active {
                 color: $info;

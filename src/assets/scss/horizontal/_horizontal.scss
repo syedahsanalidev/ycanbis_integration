@@ -5,21 +5,15 @@ File: scss
 */
 $sidebarheight: 54px;
 #main-wrapper[data-layout="horizontal"] {
-  // sidebar setting
-  @include media-breakpoint-up(lg) {
-    .sidebar-nav ul .sidebar-item .first-level .sidebar-item .sidebar-link i {
-      visibility: visible;
-    }
-    .sidebar-nav .has-arrow::after {
-      top: 24px;
-    }
-    .sidebar-nav ul .sidebar-item {
-      margin-bottom: 0;
-    }
+  // Logo setting
+  .topbar .top-navbar .navbar-header .navbar-brand {
+    justify-content: center;
   }
 
-  .sidebar-nav ul .sidebar-item .sidebar-link {
-    padding: 12px;
+  // sidebar border hide
+  .sidebar-nav > #sidebarnav > .sidebar-item > .sidebar-link {
+    border-left: 0;
+    border-right: 0;
   }
 
   // language change ellipsis text
@@ -151,6 +145,7 @@ This is for the horizontal layout
           width: auto;
         }
         > .sidebar-item {
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
           &:last-child {
             border-right: none;
           }
@@ -237,7 +232,7 @@ This is for the horizontal layout
 @media (min-width: 768px) and (max-width: 1023px) {
   #main-wrapper[data-layout="horizontal"] {
     .sidebar-nav > ul > .sidebar-item > .sidebar-link i {
-      display: block;
+      display: none;
     }
 
     .sidebar-nav #sidebarnav > .sidebar-item {

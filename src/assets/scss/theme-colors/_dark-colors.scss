@@ -182,44 +182,44 @@
 }
 
 .alert-primary {
-  background-color: rgba($color: $primary, $alpha: 0.12);
-  border-color: rgba($color: $primary, $alpha: 0.3);
+  background-color: rgba($color: #443c69, $alpha: 0.7);
+  border-color: rgba($color: #d2d8f7, $alpha: 0.3);
   color: $purple;
 }
 
 .alert-secondary {
-  background-color: rgba($color: #475667, $alpha: 0.12);
+  background-color: rgba($color: #475667, $alpha: 0.7);
   border-color: rgba($color: #dee2e7, $alpha: 0.3);
   color: $gray-600;
 }
 
 .alert-success {
-  background-color: rgba($color: $success, $alpha: 0.12);
-  border-color: rgba($color: $success, $alpha: 0.3);
+  background-color: rgba($color: #608e81, $alpha: 0.9);
+  border-color: rgba($color: #c4f1de, $alpha: 0.3);
 }
 
 .alert-danger {
-  background-color: rgba($color: $danger, $alpha: 0.12);
-  border-color: rgba($color: $danger, $alpha: 0.3);
+  background-color: rgba($color: #a25765, $alpha: 0.7);
+  border-color: rgba($color: #fcc4ce, $alpha: 0.3);
 }
 
 .alert-warning {
-  background-color: rgba($color: $warning, $alpha: 0.12);
-  border-color: rgba($color: $warning, $alpha: 0.3);
+  background-color: rgba($color: #69522ab3, $alpha: 0.7);
+  border-color: rgba($color: #fed3ca, $alpha: 0.3);
 }
 
 .alert-info {
-  background-color: rgba($color: $info, $alpha: 0.12);
-  border-color: rgba($color: $info, $alpha: 0.3);
+  background-color: rgba($color: #5c71a7b3, $alpha: 0.7);
+  border-color: rgba($color: #c3d3ff, $alpha: 0.3);
 }
 
 .alert-light {
-  background-color: rgba($color: #fdfefe, $alpha: 0.12);
+  background-color: rgba($color: #fdfefe, $alpha: 0.7);
   border-color: rgba($color: #fcfdfe, $alpha: 0.3);
 }
 
 .alert-dark {
-  background-color: rgba($color: #626269b3, $alpha: 0.1);
+  background-color: rgba($color: #626269b3, $alpha: 0.7);
   border-color: rgba($color: #c6c6d2, $alpha: 0.3);
 }
 

@@ -3,7 +3,7 @@ $chat-window-height:350px;
 .chat-windows {
     position: fixed;
     bottom: 0px;
-    right: 280px;
+    right: $chat-window-width;
     height: $chat-window-height;
     max-height: $chat-window-height;
     z-index: 9999;
