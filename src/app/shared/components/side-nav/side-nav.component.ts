@@ -38,7 +38,8 @@ import {
   faUserCircle,
   faUserPlus,
   faHeadset,
-  faPager
+  faPager,
+  faCalendarAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { Observable, Subscription } from 'rxjs';
 
@@ -89,7 +90,9 @@ export class SideNavComponent implements OnInit {
   faBookReader = faBookReader;
   faUserCheck = faUserCheck;
   faUserTie = faUserTie;
-  faPager = faPager
+  faPager = faPager;
+  faCalendarAlt = faCalendarAlt;
+
   nameKeyword: any = 'NA';
   loggedInUser: any;
 

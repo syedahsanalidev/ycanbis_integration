@@ -35,6 +35,10 @@ const routes: Routes = [
       {
         path: 'contact-grid',
         loadChildren : ()=> import('./contact-grid/contact.module').then(mod=>mod.ContactModule)
+      },
+      {
+        path: 'fullcalendar',
+        loadChildren : ()=> import('./fullcalendar/fullcalendar.module').then(mod=>mod.FullcalendarModule)
       }
     ]
   }
