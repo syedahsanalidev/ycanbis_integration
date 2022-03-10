@@ -5,25 +5,17 @@ File: scss
 */
 $sidebarheight: 54px;
 #main-wrapper[data-layout="horizontal"] {
-  // sidebar setting
+  .footer {
+    background-color: transparent;
+  }
+  // language change ellipsis text
   @include media-breakpoint-up(lg) {
     .sidebar-nav ul .sidebar-item .first-level .sidebar-item .sidebar-link i {
       visibility: visible;
     }
-    .sidebar-nav .has-arrow::after {
-      top: 24px;
-    }
     .sidebar-nav ul .sidebar-item {
       margin-bottom: 0;
     }
-  }
-
-  .sidebar-nav ul .sidebar-item .sidebar-link {
-    padding: 12px;
-  }
-
-  // language change ellipsis text
-  @include media-breakpoint-up(lg) {
     .sidebar-nav {
       #sidebarnav {
         > .sidebar-item {
@@ -35,6 +27,16 @@ $sidebarheight: 54px;
         }
       }
     }
+  }
+
+  @media (min-width: 992px) {
+    .sidebar-nav ul .sidebar-item .sidebar-link {
+      padding: 14px 0;
+    }
+  }
+
+  .page-breadcrumb {
+    background: transparent;
   }
 
   /****************************
@@ -66,7 +68,6 @@ $sidebarheight: 54px;
     }
   }
 }
-
 /****************************
 This is for the horizontal layout
 ***************************/
@@ -109,7 +110,12 @@ This is for the horizontal layout
     }
     &[data-sidebar-position="fixed"] {
       .page-wrapper {
-        padding-top: 114px;
+        padding-top: 118px;
+      }
+    }
+    &[data-boxed-layout="full"] {
+      .page-wrapper {
+        margin-left: 0;
       }
     }
     /****************************
@@ -149,11 +155,14 @@ This is for the horizontal layout
         .sidebar-item {
           position: relative;
           width: auto;
+          .sidebar-link {
+            border-left: 0;
+          }
         }
         > .sidebar-item {
-          &:last-child {
-            border-right: none;
-          }
+          // &:last-child {
+          //   border-right: none;
+          // }
           > .has-arrow:after {
             transform: rotate(-135deg) translate(0, -50%);
           }
@@ -237,7 +246,7 @@ This is for the horizontal layout
 @media (min-width: 768px) and (max-width: 1023px) {
   #main-wrapper[data-layout="horizontal"] {
     .sidebar-nav > ul > .sidebar-item > .sidebar-link i {
-      display: block;
+      display: none;
     }
 
     .sidebar-nav #sidebarnav > .sidebar-item {

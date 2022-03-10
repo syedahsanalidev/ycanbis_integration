@@ -48,16 +48,6 @@ a.link {
     }
 }
 
-.lstick {
-    width: 2px;
-    background: $themecolor;
-    height: 30px;
-    margin-left: -20px;
-    margin-right: 18px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
 
 /*******************
 Blockquote
@@ -321,8 +311,7 @@ Card
 ******************/
 
 .card {
-    margin-bottom: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    margin-bottom: 30px;
     .card-subtitle {
         font-weight: $font-weight-light;
         margin-bottom: 10px;
@@ -395,6 +384,9 @@ Card
 /*******************
 Labels
 *******************/
+label {
+    font-weight: 300 !important;
+}
 
 .label {
     padding: 3px 10px;

@@ -16,7 +16,7 @@
 }
 
 .page-wrapper > .container-fluid {
-  padding: 20px;
+  padding: 25px;
   min-height: calc(100vh - 180px);
 }
 
@@ -35,9 +35,10 @@
 
 .main-part {
   display: flex;
-  height: calc(100vh - 176px);
+  height: calc(100vh - 175px);
   align-items: strech;
 }
+
 $left-part-width: 260px;
 .left-part {
   width: $left-part-width;
@@ -91,10 +92,15 @@ $left-part-width: 260px;
     }
   }
   &[data-sidebartype="iconbar"] {
-    .logo-icon {
+    .page-wrapper {
+      margin-left: $sidebar-width-iconbar;
+    }
+
+    .icon-logo {
       margin: 0 auto;
     }
-    .logo-text {
+
+    .icon-text {
       display: none;
     }
 
@@ -104,9 +110,6 @@ $left-part-width: 260px;
       display: block;
     }
 
-    .page-wrapper {
-      margin-left: $sidebar-width-iconbar;
-    }
     .left-sidebar,
     .topbar .top-navbar .navbar-header,
     .sidebar-nav ul .sidebar-item {
@@ -248,10 +251,26 @@ $left-part-width: 260px;
           }
         }
       }
+      .user-profile {
+        .profile-img {
+          width: 40px;
+        }
+        .profile-text {
+          display: none;
+        }
+      }
       .left-sidebar {
         width: $sidebar-width-mini;
         &:hover {
           width: $sidebar-width-full;
+          .user-profile {
+            .profile-img {
+              width: 70px;
+            }
+            .profile-text {
+              display: block;
+            }
+          }
           .sidebar-nav {
             .hide-menu,
             .has-arrow:after {
@@ -260,9 +279,6 @@ $left-part-width: 260px;
             .nav-small-cap {
               justify-content: flex-start;
               padding: 12px 23px;
-              i {
-                display: none;
-              }
             }
             .first-level {
               .sidebar-item .sidebar-link i {

@@ -1,6 +1,6 @@
 // Sidebar
 $sidebar-link-padding: 12px 15px;
-$sidebar-icon-size: 24px;
+$sidebar-icon-size: 16px;
 $sidebar-first-level-padding: 0 0 10px 0;
 $sidebar-first-level-link-padding: 2px 15px;
 $sidebar-first-level-icon-size: 14px;
@@ -29,11 +29,6 @@ sidebar navigation
 .scroll-sidebar {
   height: calc(100% - 20px);
   overflow: auto;
-  position: relative;
-}
-
-.ps__rail-y {
-  z-index: 9;
 }
 
 .sidebar-nav {
@@ -51,13 +46,13 @@ sidebar navigation
         opacity: 0.4;
         cursor: pointer;
         font-size: 14px;
-        font-weight: 400;
+        border-left: 3px solid transparent;
         .side-badge.badge {
           position: absolute;
           right: 32px;
-          top: 17px;
+          top: 15px;
           padding: 3px 10px;
-          border-radius: 4px;
+          line-height: 13px;
         }
         i {
           font-style: normal;
@@ -71,23 +66,36 @@ sidebar navigation
         &.active,
         &:hover {
           opacity: 1;
+          border-left: 3px solid $danger;
         }
       }
-      &.active > .sidebar-link,
       &.selected > .sidebar-link,
       &:hover > .sidebar-link {
         /*background: rgba(0, 0, 0, 0.04);*/
         opacity: 1;
       }
+      &.active {
+        > .sidebar-link {
+          border-left: 3px solid $white;
+          color: $white;
+          i {
+            color: $white;
+          }
+        }
+      }
       /*******************
-					 First level
-					 ******************/
+			 First level
+			 ******************/
       .first-level {
         padding: $sidebar-first-level-padding;
         .sidebar-item.active > .sidebar-link {
           opacity: 1;
+          border-left: 3px solid transparent;
         }
         .sidebar-item .sidebar-link {
+          &:hover {
+            border-left: 3px solid transparent;
+          }
           padding: $sidebar-first-level-link-padding;
           i {
             font-size: $sidebar-first-level-icon-size;
@@ -103,20 +111,20 @@ sidebar navigation
 		 Small cap
 		 ******************/
     .nav-small-cap {
-      font-size: 12px;
+      font-size: 11px;
       padding: $small-cap-padding;
       white-space: nowrap;
       display: flex;
       align-items: center;
       line-height: 30px;
       margin-top: 10px;
-      color: $sidebar-text;
-      opacity: 0.4;
       font-weight: 500;
+      color: $sidebar-text;
+      text-transform: uppercase;
+      opacity: 1;
       i {
         line-height: 30px;
-        margin: 0 5px;
-        // display: none;
+        margin-right: 5px;
       }
     }
   }
@@ -158,7 +166,7 @@ Down arrow
     -ms-transform-origin: top;
     -o-transform-origin: top;
     transform-origin: top;
-    top: 26px;
+    top: 24px;
     right: 15px;
     -webkit-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
@@ -178,24 +186,51 @@ Down arrow
   transform: rotate(-135deg) translate(0, -50%);
 }
 
+/*******************
+use profile section
+******************/
+
 .user-profile {
-  padding: 10px 0 10px 10px;
-  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
-  > .sidebar-link {
-    padding: 12px 0 8px 8px !important;
+  position: relative;
+  background-size: cover;
+  padding-top: 10px;
+  .setpos {
+    top: -47px;
+    right: -3px;
   }
-  span {
+  .profile-img {
+    width: 70px;
+    margin: 0 auto;
+    padding: 10px 0 5px 0;
+    border-radius: 100%;
     img {
-      width: 30px;
+      width: 100%;
+      padding: 5px;
+      border: 1px solid $border-color;
       border-radius: 100%;
-      margin-right: 10px;
     }
   }
-  ul {
-    padding-left: 47px;
-    li {
-      margin-top: 8px;
+  .profile-text {
+    padding: 5px 0px;
+    position: relative;
+    text-align: center;
+    > a {
+      color: $text-muted;
+      padding: 0 5px;
+      &:hover {
+        color: $themecolor;
+      }
+      &:after {
+        display: none;
+      }
     }
+  }
+  .dropdown-menu {
+    left: 0px !important;
+    right: 0px;
+    top: 28px !important;
+    width: 180px;
+    margin: 0 auto;
   }
 }
 
@@ -204,5 +239,5 @@ Down arrow
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-right: 35px;
+  margin-right: 40px;
 }

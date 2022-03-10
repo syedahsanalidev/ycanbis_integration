@@ -1,17 +1,16 @@
-/*******************/
-/*To do widgets*/
-/*******************/
-
 .todo-list {
     li {
         border: 0px;
         margin-bottom: 0px;
         padding: 20px 15px 15px 0px;
+        .todo-label {
+            width: 100%;
+        }
         .checkbox {
             width: 100%;
             label {
                 font-weight: 400;
-                color:$body-color;
+                color: $body-color;
             }
         }
         &:last-child {

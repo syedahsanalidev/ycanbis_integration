@@ -3,19 +3,18 @@
 *******************/
 
 .page-breadcrumb {
-    padding: 20px 20px 0 20px;  
+    padding: 15px;
+    background: $white;  
     .page-title{
         margin-bottom: 0px;
-        color: $info;
+        color: rgba(0,0,0,.5);
+        font-weight: 600;
     }
     .breadcrumb {
         padding: 0px;
         margin: 0px;
         background: transparent;
-        font-size: 12px;
-        .breadcrumb-item a {
-            color: $body-color
-        }
+        font-size: 16px;
         .breadcrumb-item+.breadcrumb-item::before {
             content: "\e649";
             font-family: themify;
@@ -23,7 +22,7 @@
             font-size: 11px;
         }
         .breadcrumb-item.active {
-            color: $gray-800;
+            color: $danger;
         }
     }
 }

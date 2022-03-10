@@ -4,7 +4,6 @@
 
 @import "rtl-padding-margin";
 @import "horizontal-rtl";
-
 [dir="rtl"] {
   @import "spacing-rtl";
 
@@ -21,9 +20,25 @@
     }
   }
 
-  .lstick {
-    margin-right: -20px;
-    margin-left: 18px;
+  .steamline {
+    border-right: 1px solid rgba(120, 130, 140, 0.13);
+    border-left: 0;
+    margin-right: 20px;
+    margin-left: 0;
+    .sl-left {
+      margin-right: -20px;
+      margin-left: 15px;
+      float: right;
+    }
+    .sl-right {
+      padding-right: 30px;
+      padding-left: 0;
+    }
+  }
+
+  .hide-menu {
+    margin-right: 0;
+    margin-left: 35px;
   }
 
   .custom-select {
@@ -46,27 +61,6 @@
     padding: 0px;
   }
 
-  .comment-footer .action-icons a {
-    padding-right: 7px;
-    padding-left: 0;
-  }
-
-  .steamline {
-    border-right: 1px solid rgba(120, 130, 140, 0.13);
-    border-left: 0;
-    margin-right: 20px;
-    margin-left: 0;
-    .sl-left {
-      margin-right: -20px;
-      margin-left: 15px;
-      float: right;
-    }
-    .sl-right {
-      padding-right: 30px;
-      padding-left: 0;
-    }
-  }
-
   .float-left {
     float: right !important;
   }
@@ -83,6 +77,11 @@
 
   .close {
     float: left;
+  }
+
+  .comment-footer .action-icons a {
+    padding-right: 7px;
+    padding-left: 0;
   }
 
   .modal-header .close {
@@ -427,7 +426,7 @@
   /* Vertical responsive layout */
 
   @include media-breakpoint-up(lg) {
-    &#main-wrapper {
+    &#main-wrapper[data-layout="vertical"] {
       /*Sidebar position*/
 
       &[data-sidebar-position="fixed"][data-sidebartype="full"],
@@ -500,8 +499,6 @@
       margin-right: 0px;
     }
   }
-
-  // new
 
   @media (max-width: 767px) {
     .topbar .top-navbar {

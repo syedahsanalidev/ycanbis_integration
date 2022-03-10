@@ -57,31 +57,33 @@
   }
 }
 
-.search-box {
-  .app-search {
-    z-index: 110;
-    width: 100%;
-    top: -1px;
-    box-shadow: $shadow;
-    display: none;
-    left: 0px;
-    &.show-search {
-      display: block;
-    }
-    .form-control {
-      padding: 30px 20px;
-      @extend %square;
-      transition: $transitions;
-      &:focus {
-        border-color: transparent;
-      }
-    }
-    .srh-btn {
-      position: absolute;
-      top: 23px;
-      cursor: pointer;
-      right: 20px;
-    }
+.app-search {
+  position: relative;
+  margin: 0px;
+  a {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: $inverse;
+  }
+  .form-control,
+  .form-control:focus {
+    border: none;
+    font-size: 13px;
+    color: $inverse;
+    padding-left: 20px;
+    padding-right: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: none;
+    min-height: 30px;
+    font-weight: 600;
+    width: 180px;
+    display: inline-block;
+    border-radius: 40px;
+    transition: 0.5s ease-out;
+  }
+  .form-control:focus {
+    width: 300px;
   }
 }
 
@@ -107,8 +109,28 @@ Designed dropdown
 .topbar {
   .dropdown-menu {
     padding-top: 0px;
-    border: 1px solid rgba(120, 130, 140, 0.13);
+    border: 0px;
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    .with-arrow {
+      position: absolute;
+      height: 10px;
+      overflow: hidden;
+      width: 40px;
+      top: -10px;
+      > span {
+        @extend %rotate45;
+        background-color: $white;
+        width: 15px;
+        height: 15px;
+        top: 3px;
+        left: 15px;
+        position: absolute;
+        content: "";
+        -moz-border-radius: 6px 0 0 0;
+        border-radius: 6px 0 0 0;
+        /*box-shadow:-3px -3px 8px rgba(0, 0, 0, 0.1);    */
+      }
+    }
     &.dropdown-menu-right {
       .with-arrow {
         right: 0px;
@@ -134,6 +156,9 @@ Topbar Responsive
     }
     .navbar-nav {
       flex-direction: row;
+      .dropdown {
+        position: relative;
+      }
     }
     .navbar-nav > .nav-item > .nav-link {
       padding: 0 10px;
@@ -150,6 +175,7 @@ Topbar Responsive
 @media (max-width: 767px) {
   .topbar .top-navbar {
     .navbar-nav {
+      flex-direction: row;
       .dropdown {
         position: static;
       }

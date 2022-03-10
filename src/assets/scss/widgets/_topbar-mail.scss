@@ -16,19 +16,31 @@ $mailbox-height: 317px;
     padding: 15px 20px;
     border-radius: $border-radius $border-radius 0 0;
     position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      //background: url(../../assets/images/background/img5.png) no-repeat;
+      opacity: 0.2;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
   }
   .nav-link {
     border-top: 1px solid $border-color;
     padding-top: 15px;
     color: $body-color;
   }
-
-  .message-center {
+  .height-widget {
     height: $mailbox-height;
+  }
+  .message-center {
     overflow: auto;
     position: relative;
     .message-item {
-      border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+      border-bottom: 1px solid $border-color;
       display: block;
       text-decoration: none;
       padding: 9px 15px;
@@ -90,12 +102,5 @@ $mailbox-height: 317px;
         }
       }
     }
-  }
-}
-
-.mail-pagination .pagination {
-  margin-bottom: 0;
-  .page-link {
-    padding: 6px 12px;
   }
 }
