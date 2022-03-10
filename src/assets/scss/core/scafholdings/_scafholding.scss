@@ -17,9 +17,6 @@ html {
 
 a {
     color: $themecolor;
-    &:hover {
-        color: $body-color;
-    }
 }
 
 a:hover,
@@ -29,6 +26,7 @@ a:focus {
 
 a.link {
     color: $body-color;
+
     &:hover,
     &:focus {
         color: $themecolor;
@@ -42,6 +40,7 @@ a.link {
 
 
 .no-wrap {
+
     td,
     th {
         white-space: nowrap;
@@ -49,15 +48,10 @@ a.link {
 }
 
 
+
 /*******************
 Blockquote
 *******************/
-
-html body blockquote {
-    border-left: 5px solid $primary;
-    border: 1px solid $border-color;
-    padding: 15px;
-}
 
 .clear {
     clear: both;
@@ -108,11 +102,7 @@ Opacity
     opacity: 0.3;
 }
 
-// Table header border 0
 
-// .table th, .table thead th {
-//     border: 0;
-// }
 
 /*******************
 font weight
@@ -122,50 +112,74 @@ html body {
     .font-bold {
         font-weight: $font-weight-bold;
     }
+
     .font-normal {
         font-weight: $font-weight-normal;
     }
+
     .font-light {
         font-weight: $font-weight-light;
     }
+
     .font-medium {
         font-weight: $font-weight-medium;
     }
+
     .font-16 {
         font-size: 16px;
     }
-    .font-15 {
-        font-size: 15px;
-    }
+
     .font-12 {
-        font-size: 12px;
+        font-size: 12px !important;
     }
+
     .font-14 {
         font-size: 14px;
     }
+
     .font-10 {
         font-size: 10px;
     }
+
     .font-18 {
         font-size: 18px;
     }
+
     .font-20 {
         font-size: 20px;
     }
+
     .font-22 {
         font-size: 22px;
     }
+
     .font-24 {
         font-size: 24px;
     }
+
+    // Type display classes
     .display-5 {
-        font-size: 3rem;
+        font-size: $display5-size;
+        font-weight: $display5-weight;
+        line-height: $display-line-height;
     }
+
     .display-6 {
-        font-size: 2.5rem;
+        font-size: $display6-size;
+        font-weight: $display6-weight;
+        line-height: $display-line-height;
     }
+
     .display-7 {
-        font-size: 2rem;
+        font-size: $display7-size;
+        font-weight: $display7-weight;
+        line-height: $display-line-height;
+    }
+
+    .blockquote {
+        border-left: 5px solid $primary;
+        border: 1px solid $border-color;
+        padding: 15px;
     }
 }
 
@@ -179,18 +193,23 @@ html body {
     .bg-megna {
         background-color: $cyan;
     }
+
     .bg-theme {
         background-color: $themecolor;
     }
+
     .bg-inverse {
         background-color: $gray-900;
     }
+
     .bg-purple {
         background-color: $purple;
     }
+
     .bg-light {
         background-color: $gray-200;
     }
+
     .bg-white {
         background-color: $white;
     }
@@ -213,9 +232,11 @@ Rounds
     border-radius: 100%;
     background: $blue;
     line-height: 52px;
+
     img {
         border-radius: 100%;
     }
+
     &.round-info {
         background: $blue;
     }
@@ -263,8 +284,9 @@ Labels
 ******************/
 
 .badge {
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-light;
     line-height: normal;
+
     &.badge-pill {
         padding: 0.20em 0.6em;
     }
@@ -291,13 +313,16 @@ List-style-none
 ul.list-style-none {
     margin: 0px;
     padding: 0px;
+
     li {
         list-style: none;
+
         a {
             color: $body-color;
             padding: 8px 0px;
             display: block;
             text-decoration: none;
+
             &:hover {
                 color: $themecolor;
             }
@@ -312,24 +337,30 @@ Card
 
 .card {
     margin-bottom: 30px;
+    overflow: visible !important;
+
     .card-subtitle {
         font-weight: $font-weight-light;
         margin-bottom: 10px;
         color: $text-muted;
     }
+
     .card-title {
         position: relative;
-        font-weight: $font-weight-normal;
+        font-weight: $font-weight-medium;
         margin-bottom: 10px;
     }
+
     .card-actions {
         float: $rgt;
+
         a {
             padding: 0 5px;
             cursor: pointer;
         }
     }
-    .card-header .card-title{
+
+    .card-header .card-title {
         margin-bottom: 0px;
     }
 }
@@ -340,7 +371,8 @@ Card
 }
 
 .card-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+
     .card {
         border-right: 1px solid $border-color;
     }
@@ -359,34 +391,42 @@ Card
 .oh {
     overflow: hidden;
 }
-.card-hover{
+
+.card-hover {
     -webkit-transition: all .25s ease;
     -o-transition: all .25s ease;
     -moz-transition: all .25s ease;
     transition: all .25s ease;
-    &:hover{
-        webkit-transform: translateY(-4px) scale(1.01);
+
+    &:hover {
+        -webkit-transform: translateY(-4px) scale(1.01);
         -moz-transform: translateY(-4px) scale(1.01);
         -ms-transform: translateY(-4px) scale(1.01);
         -o-transform: translateY(-4px) scale(1.01);
         transform: translateY(-4px) scale(1.01);
-        -webkit-box-shadow: 0 14px 24px rgba(62,57,107,.1);
-        box-shadow: 0 14px 24px rgba(62,57,107,.1);
+        -webkit-box-shadow: 0 14px 24px rgba(62, 57, 107, .1);
+        box-shadow: 0 14px 24px rgba(62, 57, 107, .1);
     }
 }
-.draggable-cards .card-header{
+
+.accordion {
+    .card {
+        margin-bottom: 2px;
+    }
+}
+
+.draggable-cards .card-header {
     cursor: move;
 }
-.card-moved .card{
+
+.card-moved .card {
     background: $info;
-    color:$white;
+    color: $white;
 }
+
 /*******************
 Labels
 *******************/
-label {
-    font-weight: 300 !important;
-}
 
 .label {
     padding: 3px 10px;
