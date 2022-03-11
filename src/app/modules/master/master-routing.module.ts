@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterComponent } from './master.component';
-
+import { TimelineComponent } from './timeline/timeline.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,8 +26,15 @@ const routes: Routes = [
       },
       {
         path: 'timeline',
-        loadChildren: () => import('./timeline/timeline.module').then(mod => mod.TimelineModule)
-      }
+        component: TimelineComponent,
+        data: {
+          title: 'Timeline',
+          urls: [
+            { title: 'Dashboard', url: '/dashboard' },
+            { title: 'Timeline' }
+          ]
+        }
+      },
     ]
   }
 ];
