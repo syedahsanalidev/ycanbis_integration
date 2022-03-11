@@ -68,14 +68,14 @@ export class FullcalendarComponent {
   ////////////////////////////////////*/
   actions: CalendarEventAction[] = [
     {
-      label: '<span class="badge bg-info ml-1"><i class="ti-pencil"></i></span>',
+      label: '<span class="badge bg-info ms-1"><i class="ti-pencil"></i></span>',
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edit', event);
       },
     },
     {
-      label: '<span class="badge bg-danger ml-1"><i class="ti-trash"></i></span>',
+      label: '<span class="badge bg-danger ms-1"><i class="ti-trash"></i></span>',
       a11yLabel: 'Delete',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.events = this.events.filter((iEvent) => iEvent !== event);

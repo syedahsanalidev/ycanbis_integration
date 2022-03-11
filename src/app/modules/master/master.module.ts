@@ -7,7 +7,7 @@ import { HeaderModule } from 'src/app/shared/modules/header/header.module';
 import { FooterModule } from 'src/app/shared/modules/footer/footer.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SideNavComponent } from 'src/app/shared/components/side-nav/side-nav.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { SideNavComponent } from 'src/app/shared/components/side-nav/side-nav.co
     CommonModule,
     MasterRoutingModule,
     HeaderModule,
+    NgbModule,
     FooterModule,
     FontAwesomeModule
   ]

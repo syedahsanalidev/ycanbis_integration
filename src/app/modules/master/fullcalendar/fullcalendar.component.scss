@@ -9,3 +9,9 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
+.table > :not(:first-child) {
+  border-top: 2px solid transparent !important;
+}
+.table > :not(caption) > * > * {
+  padding: 1rem !important;
+}

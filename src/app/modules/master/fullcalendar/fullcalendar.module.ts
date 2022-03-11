@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
 import { FullcalendarRoutingModule } from "./fullcalendar.routing.module";
 import { FullcalendarComponent } from "./fullcalendar.component";
 import {CalendarModule, DateAdapter} from "angular-calendar";
@@ -24,7 +23,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
-    FlatpickrModule,
+    FlatpickrModule.forRoot(),
   ],
   declarations: [
     FullcalendarComponent,
