@@ -1,0 +1,60 @@
+<div class="card bg-primary border-0">
+    <div class="card-body">
+        <div class="d-flex">
+            <div class="me-3 align-self-center">
+                <h1 class="text-white"><i class="ti-pie-chart"></i></h1>
+            </div>
+            <div>
+                <h4 class="card-title text-white">Bandwidth usage</h4>
+                <h5 class="card-subtitle text-white">March 2019</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 align-self-center">
+                <font class="display-6 text-white">50 GB</font>
+            </div>
+            <div class="col-md-8 align-self-center mb-3">
+                <div class="mb-0 d-flex flex-column" style="height: 120px;">
+                    <apx-chart [series]="bandwidthChartOptions.series" [chart]="bandwidthChartOptions.chart"
+                        [xaxis]="bandwidthChartOptions.xaxis" [yaxis]="bandwidthChartOptions.yaxis"
+                        [grid]="bandwidthChartOptions.grid" [stroke]="bandwidthChartOptions.stroke"
+                        [tooltip]="bandwidthChartOptions.tooltip" [dataLabels]="bandwidthChartOptions.dataLabels"
+                        [legend]="bandwidthChartOptions.legend" [colors]="bandwidthChartOptions.colors"
+                        [markers]="bandwidthChartOptions.markers" [fill]="bandwidthChartOptions.fill">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card -2  -->
+<div class="card bg-danger border-0">
+    <div class="card-body">
+        <div class="d-flex">
+            <div class="mr-3 align-self-center">
+                <h1 class="text-white"><i class="icon-cloud-download"></i></h1>
+            </div>
+            <div>
+                <h4 class="card-title text-white">Download count</h4>
+                <h5 class="card-subtitle text-white">March 2019</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 align-self-center">
+                <font class="display-6 text-white">35487</font>
+            </div>
+            <div class="col-md-5 offset-md-3">
+                <div class="float-right" style="height: 125px; width: 150px;">
+                    <apx-chart [series]="downloadChartOptions.series" [chart]="downloadChartOptions.chart"
+                        [xaxis]="downloadChartOptions.xaxis" [yaxis]="downloadChartOptions.yaxis"
+                        [grid]="downloadChartOptions.grid" [stroke]="downloadChartOptions.stroke"
+                        [tooltip]="downloadChartOptions.tooltip" [dataLabels]="downloadChartOptions.dataLabels"
+                        [legend]="downloadChartOptions.legend" [colors]="downloadChartOptions.colors"
+                        [markers]="downloadChartOptions.markers" [fill]="downloadChartOptions.fill"
+                        [plotOptions]="downloadChartOptions.plotOptions">
+                    </apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

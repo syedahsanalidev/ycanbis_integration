@@ -1,0 +1,30 @@
+<div class="card border-0">
+    <div class="card-body">
+        <div class="d-flex align-items-center mb-3">
+            <h5 class="card-title text-uppercase mb-0">Mothly Site Traffic</h5>
+            <div class="ms-auto">
+                <small class="text-success"><i class="fas fa-sort-up"></i> 18% High then last month</small>
+            </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="p-2 ps-0 border-end">
+                <h6 class="font-light">Overall Growth</h6><span class="font-medium">80.40%</span>
+            </div>
+            <div class="p-2  border-end">
+                <h6 class="font-light">Montly</h6><span class="font-medium">20.40%</span>
+            </div>
+            <div class="p-2">
+                <h6 class="font-light">Day</h6><span class="font-medium">5.40%</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-2">
+        <apx-chart [series]="monshtlysitevisitChartOptions.series" [chart]="monshtlysitevisitChartOptions.chart"
+            [xaxis]="monshtlysitevisitChartOptions.xaxis" [yaxis]="monshtlysitevisitChartOptions.yaxis"
+            [grid]="monshtlysitevisitChartOptions.grid" [stroke]="monshtlysitevisitChartOptions.stroke"
+            [tooltip]="monshtlysitevisitChartOptions.tooltip" [dataLabels]="monshtlysitevisitChartOptions.dataLabels"
+            [legend]="monshtlysitevisitChartOptions.legend" [colors]="monshtlysitevisitChartOptions.colors"
+            [markers]="monshtlysitevisitChartOptions.markers" [fill]="monshtlysitevisitChartOptions.fill">
+        </apx-chart>
+    </div>
+</div>

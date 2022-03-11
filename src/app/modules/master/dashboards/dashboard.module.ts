@@ -16,28 +16,25 @@ import { NgApexchartsModule } from "ng-apexcharts";
 
 import { DashboardRoutes } from './dashboard.routing';
 
-import { Dashboard2Component } from './dashboard2/dashboard2.component';
+// import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { Dashboard6Component } from './dashboard6/dashboard6.component';
 
 
 import {
 
-    CommentComponent,
 
-    ExpanceComponent,
-    TotalSalesComponent,
-    FinanceComponent,
-    CalendarWidgetComponent,
-    YearlySalesComponent,
-    TotalIncomeComponent,
-    MonthlySalesComponent,
-    WeeklyUsageComponent,
-    MonthlyUsageComponent,
-    RecentSalesComponent,
+    Stats2Component,
 
-    TotalEarningsComponent,
-    FeedsComponent,
+    ChatListingComponent,
 
-    TotalEarnings2Component,
+    ChatComponent,
+
+    CountryVisitComponent,
+    MonthlySiteVisitComponent,
+    WeeklySiteVisitComponent,
+
+    NotificationComponent,
+    BandwidthDownloadComponent
 
 } from './dashboard-components';
 
@@ -59,25 +56,21 @@ import {
         NgApexchartsModule
     ],
     declarations: [
-        Dashboard2Component,
+        Dashboard6Component,
 
-        CommentComponent,
 
-        ExpanceComponent,
-        TotalSalesComponent,
-        FinanceComponent,
-        CalendarWidgetComponent,
-        YearlySalesComponent,
-        TotalIncomeComponent,
-        MonthlySalesComponent,
-        WeeklyUsageComponent,
-        MonthlyUsageComponent,
-        RecentSalesComponent,
+        Stats2Component,
 
-        TotalEarningsComponent,
-        FeedsComponent,
+        ChatListingComponent,
 
-        TotalEarnings2Component,
+        ChatComponent,
+
+        CountryVisitComponent,
+        MonthlySiteVisitComponent,
+        WeeklySiteVisitComponent,
+
+        NotificationComponent,
+        BandwidthDownloadComponent
 
     ],
     providers: []
