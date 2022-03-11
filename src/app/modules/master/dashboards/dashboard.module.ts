@@ -6,15 +6,14 @@ import { ChartsModule } from 'ng2-charts';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 
-import { Dashboard4Component } from './dashboard4/dashboard4.component';
+import { Dashboard3Component } from './dashboard3/dashboard3.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardRoutes } from './dashboard.routing';
 import { ChartistModule } from 'ng-chartist';
 
-import { BrowserComponent } from './dashboard-components/browser/browser.component';
-import { SiteTrafficComponent } from './dashboard-components/site-traffic/site-traffic.component';
-import { SiteVisitComponent } from './dashboard-components/site-visit/site-visit.component';
 
+import { FeedsComponent } from './dashboard-components/feeds/feeds.component';
+import { PageAnalyzerComponent } from './dashboard-components/page-analyzer/pa.component';
 @NgModule({
   imports: [
     FormsModule,
@@ -26,12 +25,10 @@ import { SiteVisitComponent } from './dashboard-components/site-visit/site-visit
     PerfectScrollbarModule
   ],
   declarations: [
+    Dashboard3Component,
 
-    Dashboard4Component,
-
-    BrowserComponent,
-    SiteTrafficComponent,
-    SiteVisitComponent
+    FeedsComponent,
+    PageAnalyzerComponent
   ]
 })
 export class DashboardModule { }
