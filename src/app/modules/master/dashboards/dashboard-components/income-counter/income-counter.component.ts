@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
 @Component({
-  selector: "app-pa",
-  templateUrl: "./pa.component.html",
+  selector: "app-income-counter",
+  templateUrl: "./income-counter.component.html",
 })
-export class PageAnalyzerComponent {
+export class IncomeCounterComponent {
   constructor() {}
 
   // bar chart

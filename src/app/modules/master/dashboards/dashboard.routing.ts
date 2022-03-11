@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
 
-import { Dashboard3Component } from './dashboard3/dashboard3.component';
+import { Dashboard2Component } from './dashboard2/dashboard2.component';
 
 export const DashboardRoutes: Routes = [
   {
-    path: '', component: Dashboard3Component,
+    path: '', component: Dashboard2Component,
   }
 ];
