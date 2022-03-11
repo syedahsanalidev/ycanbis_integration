@@ -37,6 +37,7 @@ import {
   faNewspaper,
   faUserCircle,
   faUserPlus,
+  faTimeline,
   faHeadset,
 } from '@fortawesome/free-solid-svg-icons';
 import { Observable, Subscription } from 'rxjs';
@@ -72,6 +73,7 @@ export class SideNavComponent implements OnInit {
   faArrowRight = faArrowRight;
   faBars = faBars;
   faTimes = faTimes;
+  faTimeline = faTimeline;
   faTachometerAlt = faTachometerAlt;
   faBinoculars = faBinoculars;
   faUserCog = faUserCog;
@@ -101,7 +103,7 @@ export class SideNavComponent implements OnInit {
 
   hideToggleMenuIcon: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     let slider = localStorage.getItem('toggleSideNav');

@@ -25,8 +25,8 @@ const routes: Routes = [
         loadChildren: () => import('./my-social-subscription/instagram/instagram.module').then(mod => mod.InstagramModule)
       },
       {
-        path: 'dashboards',
-        loadChildren: () => import('./dashboards/dashboard.module').then(mod => mod.DashboardModule)
+        path: 'timeline',
+        loadChildren: () => import('./timeline/timeline.module').then(mod => mod.TimelineModule)
       }
     ]
   }

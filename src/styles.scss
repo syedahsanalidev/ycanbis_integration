@@ -157,7 +157,7 @@ html,body{
     content: "";
     position: absolute;
     width: 2px;
-    background-color: #a29191;
+    // background-color: #a29191;
     top: 30px;
     bottom: 0;
     left: 10px;
@@ -191,15 +191,15 @@ html,body{
 }
 .timeline-left::before {
     content: " ";
-    height: 0;
+    // height: 0;
     position: absolute;
     top: 22px;
-    width: 0;
+    // width: 0;
     z-index: 1;
     right: 30px;
-    border: medium solid $green;
+    // border: medium solid $green;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent $green;
+    // border-color: transparent transparent transparent $green;
 }
 
 .timeline-right::before {
