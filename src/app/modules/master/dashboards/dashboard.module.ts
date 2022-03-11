@@ -13,7 +13,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgApexchartsModule } from "ng-apexcharts";
-import { TableService } from './dashboard-components/manage-user-table/ManageUserTable.service';
+
 import { DashboardRoutes } from './dashboard.routing';
 
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
@@ -80,6 +80,6 @@ import {
         TotalEarnings2Component,
 
     ],
-    providers: [TableService]
+    providers: []
 })
 export class DashboardModule { }

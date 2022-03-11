@@ -1,5 +1,5 @@
 
-export * from './manage-user-table/ManageUserTable.component';
+
 
 export * from './recent-comments/comment.component';
 export * from './expance/Expance.component';
