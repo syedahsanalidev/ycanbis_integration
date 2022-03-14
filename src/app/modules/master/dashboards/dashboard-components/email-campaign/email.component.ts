@@ -1,6 +1,4 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
-// import * as c3 from 'c3';
-
+import { Component, ViewChild } from '@angular/core';
 import {
   ApexChart,
   ChartComponent,
@@ -11,7 +9,8 @@ import {
   ApexTooltip,
   ApexNonAxisChartSeries
 } from 'ng-apexcharts';
-export interface pollChartOptions {
+
+export interface mEmailChartOptions {
   series: ApexNonAxisChartSeries | any;
   chart: ApexChart | any;
   stroke: ApexStroke | any;
@@ -25,21 +24,23 @@ export interface pollChartOptions {
 }
 
 @Component({
-  selector: 'app-poll',
-  templateUrl: './poll.component.html',
-  styleUrls: ['./poll.component.css']
+  selector: 'app-email',
+  templateUrl: './email.component.html',
+  styleUrls: ['./email.component.css']
 })
-export class PollComponent implements AfterViewInit {
+export class EmailComponent {
+
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
-  public pollChartOptions: Partial<pollChartOptions>;
+  public mEmailChartOptions: Partial<mEmailChartOptions>;
 
   constructor() {
-    this.pollChartOptions = {
-      series: [30, 15, 27, 18, 45],
+    this.mEmailChartOptions = {
+      series: [45, 15, 27, 18],
       chart: {
         fontFamily: 'Nunito Sans,sans-serif',
         type: 'donut',
-        height: 180
+        height: 280,
+
       },
       plotOptions: {
         pie: {
@@ -59,7 +60,7 @@ export class PollComponent implements AfterViewInit {
               },
               total: {
                 show: true,
-                label: 'Ans : A',
+                label: 'Ratio',
                 color: '#99abb4',
               }
             }
@@ -78,13 +79,10 @@ export class PollComponent implements AfterViewInit {
       legends: {
         show: false,
       },
-      labels: ['A', 'B', 'C', 'D', 'None'],
-      colors: ['#40c4ff', '#2961ff', '#ff821c', '#4CAF50', '#e9edf2'],
+      labels: ['Open Ratio', 'Clicked Ratio', 'Un-Open Ratio', 'Bounced Ratio'],
+      colors: ['#40c4ff', '#2961ff', '#ff821c', '#7e74fb'],
 
     };
 
-  }
-
-  ngAfterViewInit() {
   }
 }

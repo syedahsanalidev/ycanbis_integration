@@ -15,19 +15,21 @@ import { CalendarModule, DateAdapter } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { DashboardRoutes } from "./dashboard.routing";
 
-import { Dashboard6Component } from "./dashboard6/dashboard6.component";
+import { Dashboard9Component } from "./dashboard9/dashboard9.component";
 import { NgApexchartsModule } from "ng-apexcharts";
 
 import {
 
-  EarningsComponent,
+  CamStatsComponent,
 
-  Emailcompaign2Component,
-  MonthscheduleComponent,
+  EmailComponent,
 
-  PollComponent,
-  SalelocationComponent,
-  RevenueviewsComponent,
+
+  SocialComponent,
+  UserprofileComponent,
+  WeekpollComponent,
+  ProapprComponent,
+  ReviewComponent
 
 } from "./dashboard-components";
 
@@ -50,7 +52,7 @@ import {
 
   ],
   declarations: [
-    Dashboard6Component,
+    Dashboard9Component,
 
 
 
@@ -63,7 +65,7 @@ import {
     // ActivevisitComponent,
     // VisitorComponent,
     // ActivitypagesComponent,
-    // CamStatsComponent,
+    CamStatsComponent,
     // CamoverComponent,
     // ConversionEarningsComponent,
     // CryptoChartComponent,
@@ -73,22 +75,22 @@ import {
     // CryptoComponent,
     // TradeComponent,
     // DeviceSalesComponent,
-    EarningsComponent,
+    // EarningsComponent,
     // EcomSalesComponent,
     // EcomorderComponent,
     // EcomproductComponent,
     // EcomReviewComponent,
     // StatsComponent,
-    // EmailComponent,
-    Emailcompaign2Component,
+    EmailComponent,
+    // Emailcompaign2Component,
     // FeedsComponent,
     // InfocardComponent,
     // MixstatsComponent,
     // MonthoverviewComponent,
-    MonthscheduleComponent,
+    // MonthscheduleComponent,
     // MonthviewComponent,
-    PollComponent,
-    // ProapprComponent,
+    // PollComponent,
+    ProapprComponent,
     // ProfileactivityComponent,
     // ProjectComponent,
     // Project2Component,
@@ -97,19 +99,19 @@ import {
     // ChatComponent,
     // CommentComponent,
     // RpbComponent,
-    RevenueviewsComponent,
-    // ReviewComponent,
-    SalelocationComponent,
+    // RevenueviewsComponent,
+    ReviewComponent,
+    // SalelocationComponent,
     // SalesComponent,
-    // SocialComponent,
+    SocialComponent,
     // TasklistComponent,
     // ToplocationsComponent,
     // TopreferralsComponent,
     // TopsellComponent,
-    // UserprofileComponent,
+    UserprofileComponent,
     // WeatherheaderComponent,
     // WeathercardComponent,
-    // WeekpollComponent,
+    WeekpollComponent,
   ],
 })
 export class DashboardModule { }
