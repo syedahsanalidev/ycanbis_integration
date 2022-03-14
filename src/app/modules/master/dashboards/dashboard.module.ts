@@ -15,21 +15,19 @@ import { CalendarModule, DateAdapter } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { DashboardRoutes } from "./dashboard.routing";
 
-import { Dashboard1Component } from "./dashboard1/dashboard1.component";
+import { Dashboard6Component } from "./dashboard6/dashboard6.component";
 import { NgApexchartsModule } from "ng-apexcharts";
 
 import {
 
-  VisitorComponent,
+  EarningsComponent,
 
-  EmailComponent,
+  Emailcompaign2Component,
+  MonthscheduleComponent,
 
-  ProjectComponent,
-
-  ChatComponent,
-  CommentComponent,
-  RpbComponent,
-  SalesComponent,
+  PollComponent,
+  SalelocationComponent,
+  RevenueviewsComponent,
 
 } from "./dashboard-components";
 
@@ -52,7 +50,7 @@ import {
 
   ],
   declarations: [
-    Dashboard1Component,
+    Dashboard6Component,
 
 
 
@@ -63,7 +61,7 @@ import {
 
 
     // ActivevisitComponent,
-    VisitorComponent,
+    // VisitorComponent,
     // ActivitypagesComponent,
     // CamStatsComponent,
     // CamoverComponent,
@@ -75,34 +73,34 @@ import {
     // CryptoComponent,
     // TradeComponent,
     // DeviceSalesComponent,
-    // EarningsComponent,
+    EarningsComponent,
     // EcomSalesComponent,
     // EcomorderComponent,
     // EcomproductComponent,
     // EcomReviewComponent,
     // StatsComponent,
-    EmailComponent,
-    // Emailcompaign2Component,
+    // EmailComponent,
+    Emailcompaign2Component,
     // FeedsComponent,
     // InfocardComponent,
     // MixstatsComponent,
     // MonthoverviewComponent,
-    // MonthscheduleComponent,
+    MonthscheduleComponent,
     // MonthviewComponent,
-    // PollComponent,
+    PollComponent,
     // ProapprComponent,
     // ProfileactivityComponent,
-    ProjectComponent,
+    // ProjectComponent,
     // Project2Component,
     // RealdataComponent,
     // RealtimevisitComponent,
-    ChatComponent,
-    CommentComponent,
-    RpbComponent,
-    // RevenueviewsComponent,
+    // ChatComponent,
+    // CommentComponent,
+    // RpbComponent,
+    RevenueviewsComponent,
     // ReviewComponent,
-    // SalelocationComponent,
-    SalesComponent,
+    SalelocationComponent,
+    // SalesComponent,
     // SocialComponent,
     // TasklistComponent,
     // ToplocationsComponent,

@@ -1,4 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+// import * as c3 from 'c3';
+
 import {
   ApexChart,
   ChartComponent,
@@ -9,8 +11,7 @@ import {
   ApexTooltip,
   ApexNonAxisChartSeries
 } from 'ng-apexcharts';
-
-export interface mEmailChartOptions {
+export interface pollChartOptions {
   series: ApexNonAxisChartSeries | any;
   chart: ApexChart | any;
   stroke: ApexStroke | any;
@@ -24,23 +25,21 @@ export interface mEmailChartOptions {
 }
 
 @Component({
-  selector: 'app-email',
-  templateUrl: './email.component.html',
-  styleUrls: ['./email.component.css']
+  selector: 'app-poll',
+  templateUrl: './poll.component.html',
+  styleUrls: ['./poll.component.css']
 })
-export class EmailComponent {
-
+export class PollComponent implements AfterViewInit {
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
-  public mEmailChartOptions: Partial<mEmailChartOptions>;
+  public pollChartOptions: Partial<pollChartOptions>;
 
   constructor() {
-    this.mEmailChartOptions = {
-      series: [45, 15, 27, 18],
+    this.pollChartOptions = {
+      series: [30, 15, 27, 18, 45],
       chart: {
         fontFamily: 'Nunito Sans,sans-serif',
         type: 'donut',
-        height: 280,
-
+        height: 180
       },
       plotOptions: {
         pie: {
@@ -60,7 +59,7 @@ export class EmailComponent {
               },
               total: {
                 show: true,
-                label: 'Ratio',
+                label: 'Ans : A',
                 color: '#99abb4',
               }
             }
@@ -79,10 +78,13 @@ export class EmailComponent {
       legends: {
         show: false,
       },
-      labels: ['Open Ratio', 'Clicked Ratio', 'Un-Open Ratio', 'Bounced Ratio'],
-      colors: ['#40c4ff', '#2961ff', '#ff821c', '#7e74fb'],
+      labels: ['A', 'B', 'C', 'D', 'None'],
+      colors: ['#40c4ff', '#2961ff', '#ff821c', '#4CAF50', '#e9edf2'],
 
     };
 
+  }
+
+  ngAfterViewInit() {
   }
 }

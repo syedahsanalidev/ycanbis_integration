@@ -1,14 +1,26 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, ViewChild } from '@angular/core';
 import {
   ApexAxisChartSeries,
   ApexChart,
   ChartComponent,
   ApexTooltip,
   ApexTheme,
-  ApexFill
+  ApexFill,
+  ApexPlotOptions
 } from 'ng-apexcharts';
 
-export type RevenueChartOptions = {
+export type Revenue2ChartOptions = {
+  series: ApexAxisChartSeries | any;
+  chart: ApexChart | any;
+  stroke: any;
+  fill: ApexFill | any;
+  theme: ApexTheme | any;
+  tooltip: ApexTooltip | any;
+  colors: string[] | any;
+  markers: any;
+  plotOptions: ApexPlotOptions | any
+};
+export type Pageview2ChartOptions = {
   series: ApexAxisChartSeries | any;
   chart: ApexChart | any;
   stroke: any;
@@ -18,60 +30,38 @@ export type RevenueChartOptions = {
   colors: string[] | any;
   markers: any;
 };
-export type PageviewChartOptions = {
-  series: ApexAxisChartSeries | any;
-  chart: ApexChart | any;
-  stroke: any;
-  fill: ApexFill | any;
-  theme: ApexTheme | any;
-  tooltip: ApexTooltip | any;
-  colors: string[] | any;
-  markers: any;
-};
-export type BounceChartOptions = {
-  series: ApexAxisChartSeries | any;
-  chart: ApexChart | any;
-  stroke: any | any;
-  fill: ApexFill | any;
-  theme: ApexTheme;
-  tooltip: ApexTooltip | any;
-  colors: string[] | any;
-  markers: any;
-};
-
 
 @Component({
-  selector: "app-rpb",
-  templateUrl: "./rpb.component.html",
-  styleUrls: ["./rpb.component.css"],
+  selector: 'app-revenue-views',
+  templateUrl: './revenue-views.component.html'
 })
-export class RpbComponent {
+export class RevenueviewsComponent {
 
-  @ViewChild("revenuechart") chart: ChartComponent = Object.create(null);
-  public RevenueChartOptions: Partial<RevenueChartOptions>;
+  @ViewChild("chart") chart: ChartComponent = Object.create(null);
+  public Revenue2ChartOptions: Partial<Revenue2ChartOptions>;
 
-  @ViewChild("pageviewchart") chart2: ChartComponent = Object.create(null);
-  public PageviewChartOptions: Partial<PageviewChartOptions>;
-
-  @ViewChild("bouncechart") chart3: ChartComponent = Object.create(null);
-  public BounceChartOptions: Partial<BounceChartOptions>;
-
+  @ViewChild("chart2") chart2: ChartComponent = Object.create(null);
+  public Pageview2ChartOptions: Partial<Pageview2ChartOptions>;
 
   constructor() {
-
     /***********************/
     /* Revenue chart */
     /************************/
-    this.RevenueChartOptions = {
+    this.Revenue2ChartOptions = {
       series: [
         {
-          name: '',
-          data: [20, 55, 44, 30, 61, 48, 20]
+          name: 'Revenue stats',
+          data: [6, 10, 9, 11, 9, 10, 12, 10, 9, 11, 9, 10]
         },
       ],
+      plotOptions: {
+        bar: {
+          columnWidth: '70%',
+        }
+      },
       chart: {
-        type: 'bar',
         fontFamily: 'Nunito Sans,sans-serif',
+        type: 'bar',
         height: 80,
         sparkline: {
           enabled: true
@@ -80,7 +70,6 @@ export class RpbComponent {
       fill: {
         colors: ['#fff'],
         opacity: 0.7,
-
       },
       stroke: {
         show: true,
@@ -96,13 +85,19 @@ export class RpbComponent {
         x: {
           show: false
         },
+        fixed: {
+          enabled: true,
+          position: 'topRight',
+          offsetX: 0,
+          offsetY: -50,
+        },
       }
     }
 
     /***********************/
     /* pageview chart */
     /************************/
-    this.PageviewChartOptions = {
+    this.Pageview2ChartOptions = {
       series: [
         {
           name: 'Page views',
@@ -112,7 +107,7 @@ export class RpbComponent {
       chart: {
         type: "area",
         fontFamily: 'Nunito Sans,sans-serif',
-        height: "90",
+        height: "70",
         toolbar: {
           show: false,
         },
@@ -132,36 +127,6 @@ export class RpbComponent {
         theme: "dark",
       },
     }
-
-    /***********************/
-    /* Bounce chart */
-    /************************/
-
-    this.BounceChartOptions = {
-      series: [
-        {
-          name: 'Bounce rate',
-          data: [55, 60, 38, 52, 36, 40, 28]
-        },
-      ],
-      chart: {
-        type: "line",
-        fontFamily: 'Nunito Sans,sans-serif',
-        height: "90",
-        toolbar: {
-          show: false,
-        },
-        sparkline: { enabled: true },
-      },
-
-      colors: ['#2962ff'],
-      stroke: {
-        curve: "smooth",
-        width: 2,
-      },
-      tooltip: {
-        theme: "dark",
-      },
-    }
   }
+
 }
