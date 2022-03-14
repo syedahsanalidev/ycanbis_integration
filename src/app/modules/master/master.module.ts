@@ -11,12 +11,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-import { TimelineComponent } from './timeline/timeline.component';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
-    MasterComponent, SideNavComponent, TimelineComponent
+    MasterComponent, SideNavComponent,
   ],
   imports: [
     CommonModule,

@@ -17,10 +17,10 @@ File: scss
 /*-- ============================================================== 
  Small Desktop & above all (1024px) 
  ============================================================== */
-@media (min-width: 800px) {
-  // .page-wrapper {
-  //     margin-left: $sidebar-width-full;
-  // }
+@media (min-width: 1024px) {
+  .page-wrapper {
+    margin-left: $sidebar-width-full;
+  }
 }
 
 /*-- ============================================================== 

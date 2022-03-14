@@ -5,6 +5,10 @@ File: scss
 */
 
 // This is the extra scss
+.custom-control-input {
+  z-index: 1;
+}
+
 // Tooltip for the sparkline charts
 html body {
   .jqstooltip,
@@ -684,7 +688,7 @@ Ngx wizard pages scss
 
     > a.active .round-tabs {
       background: $info;
-      border-color: $info;
+      border-color: $info !important;
       color: $white;
     }
   }
@@ -843,12 +847,6 @@ button.toast-close-button {
   background-color: $warning !important;
 }
 
-.soc-pro {
-  a {
-    color: $text-muted;
-  }
-}
-
 .accordion {
   .card {
     margin-bottom: 1px;
@@ -859,7 +857,37 @@ button.toast-close-button {
   background: yellow;
 }
 
+.cal-month-view .cal-events {
+  margin: 0;
+  padding: 3px;
+}
+.apexcharts-text {
+  fill: $text-muted;
+}
+.apexcharts-gridline,
+.apexcharts-xaxis-tick,
+.apexcharts-xaxis line {
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+.weather-img {
+  min-height: 155px;
+  border-radius: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+body {
+  background: transparent;
+}
+
+.custom-switch .custom-control-label::after {
+  top: calc(0.15625rem + 1px);
+}
+
 .feather-sm {
-  width: 20px !important;
-  height: 20px !important;
+  width: 18px !important;
+  height: 18px !important;
 }

@@ -12,18 +12,15 @@ customizer
   box-shadow: $shadow;
   transition: 0.3s ease-in;
   .service-panel-toggle {
+    background: $danger;
+    padding: 12px 20px;
     color: $white;
     position: absolute;
-    bottom: 20px;
-    left: -71px;
+    top: 30%;
+    left: -54px;
   }
   &.show-service-panel {
     right: 0px;
-    .service-panel-toggle {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
-      left: -50px;
-    }
   }
   .customizer-body {
     position: relative;

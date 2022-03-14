@@ -5,17 +5,8 @@ File: scss
 */
 $sidebarheight: 54px;
 #main-wrapper[data-layout="horizontal"] {
-  .footer {
-    background-color: transparent;
-  }
   // language change ellipsis text
   @include media-breakpoint-up(lg) {
-    .sidebar-nav ul .sidebar-item .first-level .sidebar-item .sidebar-link i {
-      visibility: visible;
-    }
-    .sidebar-nav ul .sidebar-item {
-      margin-bottom: 0;
-    }
     .sidebar-nav {
       #sidebarnav {
         > .sidebar-item {
@@ -33,10 +24,6 @@ $sidebarheight: 54px;
     .sidebar-nav ul .sidebar-item .sidebar-link {
       padding: 14px 0;
     }
-  }
-
-  .page-breadcrumb {
-    background: transparent;
   }
 
   /****************************
@@ -113,11 +100,6 @@ This is for the horizontal layout
         padding-top: 118px;
       }
     }
-    &[data-boxed-layout="full"] {
-      .page-wrapper {
-        margin-left: 0;
-      }
-    }
     /****************************
         This is for the horizontal layout
         ***************************/
@@ -155,14 +137,12 @@ This is for the horizontal layout
         .sidebar-item {
           position: relative;
           width: auto;
-          .sidebar-link {
-            border-left: 0;
-          }
         }
         > .sidebar-item {
-          // &:last-child {
-          //   border-right: none;
-          // }
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          &:last-child {
+            border-right: none;
+          }
           > .has-arrow:after {
             transform: rotate(-135deg) translate(0, -50%);
           }

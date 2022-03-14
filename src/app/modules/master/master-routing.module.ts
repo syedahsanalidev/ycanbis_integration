@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterComponent } from './master.component';
-import { TimelineComponent } from './timeline/timeline.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -25,16 +25,10 @@ const routes: Routes = [
         loadChildren: () => import('./my-social-subscription/instagram/instagram.module').then(mod => mod.InstagramModule)
       },
       {
-        path: 'timeline',
-        component: TimelineComponent,
-        data: {
-          title: 'Timeline',
-          urls: [
-            { title: 'Dashboard', url: '/dashboard' },
-            { title: 'Timeline' }
-          ]
-        }
-      },
+        path: 'dashboard',
+        loadChildren: () => import('./dashboards/dashboard.module').then(mod => mod.DashboardModule)
+      }
+      ,
     ]
   }
 ];
