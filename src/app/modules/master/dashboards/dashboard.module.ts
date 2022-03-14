@@ -15,21 +15,17 @@ import { CalendarModule, DateAdapter } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { DashboardRoutes } from "./dashboard.routing";
 
-import { Dashboard9Component } from "./dashboard9/dashboard9.component";
+import { Dashboard10Component } from "./dashboard10/dashboard10.component";
 import { NgApexchartsModule } from "ng-apexcharts";
 
 import {
 
-  CamStatsComponent,
-
-  EmailComponent,
-
-
-  SocialComponent,
-  UserprofileComponent,
-  WeekpollComponent,
-  ProapprComponent,
-  ReviewComponent
+  ActivitypagesComponent,
+  FeedsComponent,
+  RealdataComponent,
+  TasklistComponent,
+  ToplocationsComponent,
+  TopreferralsComponent
 
 } from "./dashboard-components";
 
@@ -52,8 +48,7 @@ import {
 
   ],
   declarations: [
-    Dashboard9Component,
-
+    Dashboard10Component,
 
 
 
@@ -64,8 +59,8 @@ import {
 
     // ActivevisitComponent,
     // VisitorComponent,
-    // ActivitypagesComponent,
-    CamStatsComponent,
+    ActivitypagesComponent,
+    // CamStatsComponent,
     // CamoverComponent,
     // ConversionEarningsComponent,
     // CryptoChartComponent,
@@ -81,37 +76,37 @@ import {
     // EcomproductComponent,
     // EcomReviewComponent,
     // StatsComponent,
-    EmailComponent,
+    // EmailComponent,
     // Emailcompaign2Component,
-    // FeedsComponent,
+    FeedsComponent,
     // InfocardComponent,
     // MixstatsComponent,
     // MonthoverviewComponent,
     // MonthscheduleComponent,
     // MonthviewComponent,
     // PollComponent,
-    ProapprComponent,
+    // ProapprComponent,
     // ProfileactivityComponent,
     // ProjectComponent,
     // Project2Component,
-    // RealdataComponent,
+    RealdataComponent,
     // RealtimevisitComponent,
     // ChatComponent,
     // CommentComponent,
     // RpbComponent,
     // RevenueviewsComponent,
-    ReviewComponent,
+    // ReviewComponent,
     // SalelocationComponent,
     // SalesComponent,
-    SocialComponent,
-    // TasklistComponent,
-    // ToplocationsComponent,
-    // TopreferralsComponent,
+    // SocialComponent,
+    TasklistComponent,
+    ToplocationsComponent,
+    TopreferralsComponent,
     // TopsellComponent,
-    UserprofileComponent,
+    // UserprofileComponent,
     // WeatherheaderComponent,
     // WeathercardComponent,
-    WeekpollComponent,
+    // WeekpollComponent,
   ],
 })
 export class DashboardModule { }
