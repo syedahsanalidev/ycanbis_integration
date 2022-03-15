@@ -15,7 +15,7 @@ export class ChatComponent {
     // MESSAGE
     selectedMessage: any;
     // tslint:disable-next-line - Disables all
-    messages: Object[] = messages;
+    messages: any[] = messages;
 
     constructor() {
         this.selectedMessage = this.messages[0];
