@@ -307,6 +307,32 @@
                             Supports
                           </span>
                         </a>
+                        <a
+                          class="
+                            d-block
+                            menu
+                            shadow-none
+                            text-decoration-none
+                            outline-none
+                            fs0-9
+                          "
+                          [ngClass]="
+                            toggleSideNav ? 'text-center' : 'text-left'
+                          "
+                          [routerLink]="['/chat']"
+                          routerLinkActive="active"
+                          title="Supports"
+                        >
+                          <fa-icon class="color-icon" [icon]="faHeadset">
+                          </fa-icon>
+                          <span
+                            class="text-gray2 sabic_lt ps-2"
+                            style="position: relative; left: 2px"
+                            [ngClass]="toggleSideNav ? 'hide-elements' : ''"
+                          >
+                            Chat
+                          </span>
+                        </a>
                       </div>
                     </td>
                   </tr>
